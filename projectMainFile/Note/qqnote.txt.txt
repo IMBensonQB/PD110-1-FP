@@ -1,0 +1,6 @@
+User select 的 false 區間 不包含 course true的區間
+(compare big small 即可)
+
+or
+
+False 區間的首尾端 不被包含在true區間

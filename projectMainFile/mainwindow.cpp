@@ -7,20 +7,6 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QCheckBox** timeTableList = new QCheckBox*[13];
-    for(int i = 0; i < 13; i++)
-    {
-        timeTableList[i] = new QCheckBox[5];
-    }
-
-    for(int i = 0; i < 13; i++)
-    {
-        for(int j = 0; j < 5; j++)
-        {
-            timeTableList[i][j] -> move(40+30*i,60+30*j);
-            setCentralWidget(&timeTableList[i][j]);
-        }
-    }
 
 
 

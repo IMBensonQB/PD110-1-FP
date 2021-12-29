@@ -16,8 +16,24 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_checkBox_0_stateChanged(int arg1);
+
+    void on_checkBox_01_stateChanged(int arg1);
+    void on_checkBox_02_stateChanged(int arg1);
+    void on_checkBox_03_stateChanged(int arg1);
+    void on_checkBox_04_stateChanged(int arg1);
+
+    void on_checkBox_2_stateChanged(int arg1);
+    void on_checkBox_3_stateChanged(int arg1);
+    void on_checkBox_4_stateChanged(int arg1);
+    void on_checkBox_5_stateChanged(int arg1);
+
+
 private:
     Ui::MainWindow *ui;
+    bool chooseCat[8] = {0,0,0,0,0,0,0,0};
+
 };
 
 #endif // MAINWINDOW_H

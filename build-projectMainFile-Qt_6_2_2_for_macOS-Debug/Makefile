@@ -14,10 +14,10 @@ EQ            = =
 
 CC            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
 CXX           = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
-DEFINES       = -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
+DEFINES       = -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_SQL_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk -mmacosx-version-min=10.14 -Wall -Wextra -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -stdlib=libc++ -g -std=gnu++1z $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk -mmacosx-version-min=10.14 -Wall -Wextra -fPIC $(DEFINES)
-INCPATH       = -I../projectMainFile -I. -I../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers -I../../../Qt/6.2.2/macos/lib/QtGui.framework/Headers -I../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/AGL.framework/Headers -I../../../Qt/6.2.2/macos/mkspecs/macx-clang -F/Users/bensonchiu/Qt/6.2.2/macos/lib
+INCPATH       = -I../projectMainFile -I. -I../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers -I../../../Qt/6.2.2/macos/lib/QtGui.framework/Headers -I../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers -I../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/OpenGL.framework/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/System/Library/Frameworks/AGL.framework/Headers -I../../../Qt/6.2.2/macos/mkspecs/macx-clang -F/Users/bensonchiu/Qt/6.2.2/macos/lib
 QMAKE         = /Users/bensonchiu/Qt/6.2.2/macos/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -40,7 +40,7 @@ DISTNAME      = projectMainFile1.0.0
 DISTDIR = /Users/bensonchiu/allData/PD110-1-FP/build-projectMainFile-Qt_6_2_2_for_macOS-Debug/.tmp/projectMainFile1.0.0
 LINK          = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
 LFLAGS        = -stdlib=libc++ -headerpad_max_install_names $(EXPORT_ARCH_ARGS) -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk -mmacosx-version-min=10.14 -Wl,-rpath,@executable_path/../Frameworks -Wl,-rpath,/Users/bensonchiu/Qt/6.2.2/macos/lib
-LIBS          = $(SUBLIBS) -F/Users/bensonchiu/Qt/6.2.2/macos/lib -framework QtWidgets -framework QtGui -framework AppKit -framework ImageIO -framework Metal -framework QtCore -framework DiskArbitration -framework IOKit -framework AGL -framework OpenGL   
+LIBS          = $(SUBLIBS) -F/Users/bensonchiu/Qt/6.2.2/macos/lib -framework QtWidgets -framework QtGui -framework AppKit -framework ImageIO -framework Metal -framework QtSql -framework QtCore -framework DiskArbitration -framework IOKit -framework AGL -framework OpenGL   
 AR            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar cq
 RANLIB        = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib -s
 SED           = sed
@@ -168,6 +168,7 @@ DIST          = ../../../Qt/6.2.2/macos/mkspecs/features/spec_pre.prf \
 		../../../Qt/6.2.2/macos/mkspecs/features/qt_config.prf \
 		../../../Qt/6.2.2/macos/mkspecs/macx-clang/qmake.conf \
 		../../../Qt/6.2.2/macos/mkspecs/features/spec_post.prf \
+		../projectMainFile/.qmake.stash \
 		../../../Qt/6.2.2/macos/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/6.2.2/macos/mkspecs/features/mac/sdk.prf \
 		../../../Qt/6.2.2/macos/mkspecs/features/toolchain.prf \
@@ -206,7 +207,7 @@ TARGET        = projectMainFile.app/Contents/MacOS/projectMainFile
 EXPORT_QMAKE_MAC_SDK = macosx
 EXPORT_QMAKE_MAC_SDK_VERSION = 11.0
 EXPORT_QMAKE_XCODE_DEVELOPER_PATH = /Applications/Xcode.app/Contents/Developer
-EXPORT__QMAKE_STASH_ = 
+EXPORT__QMAKE_STASH_ = /Users/bensonchiu/allData/PD110-1-FP/build-projectMainFile-Qt_6_2_2_for_macOS-Debug/.qmake.stash
 EXPORT_VALID_ARCHS = x86_64 arm64
 EXPORT_DEFAULT_ARCHS = x86_64
 EXPORT_ARCHS = $(filter $(EXPORT_VALID_ARCHS), $(if $(ARCHS), $(ARCHS), $(if $(EXPORT_DEFAULT_ARCHS), $(EXPORT_DEFAULT_ARCHS), $(EXPORT_VALID_ARCHS))))
@@ -333,6 +334,7 @@ Makefile: ../projectMainFile/projectMainFile.pro ../../../Qt/6.2.2/macos/mkspecs
 		../../../Qt/6.2.2/macos/mkspecs/features/qt_config.prf \
 		../../../Qt/6.2.2/macos/mkspecs/macx-clang/qmake.conf \
 		../../../Qt/6.2.2/macos/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../Qt/6.2.2/macos/mkspecs/features/exclusive_builds.prf \
 		../../../Qt/6.2.2/macos/mkspecs/features/mac/sdk.prf \
 		../../../Qt/6.2.2/macos/mkspecs/features/toolchain.prf \
@@ -364,6 +366,7 @@ Makefile: ../projectMainFile/projectMainFile.pro ../../../Qt/6.2.2/macos/mkspecs
 		../projectMainFile/projectMainFile.pro \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Resources/QtWidgets.prl \
 		../../../Qt/6.2.2/macos/lib/QtGui.framework/Resources/QtGui.prl \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Resources/QtSql.prl \
 		../../../Qt/6.2.2/macos/lib/QtCore.framework/Resources/QtCore.prl
 	$(QMAKE) -o Makefile ../projectMainFile/projectMainFile.pro -spec macx-clang CONFIG+=debug CONFIG+=qml_debug
 ../../../Qt/6.2.2/macos/mkspecs/features/spec_pre.prf:
@@ -477,6 +480,7 @@ Makefile: ../projectMainFile/projectMainFile.pro ../../../Qt/6.2.2/macos/mkspecs
 ../../../Qt/6.2.2/macos/mkspecs/features/qt_config.prf:
 ../../../Qt/6.2.2/macos/mkspecs/macx-clang/qmake.conf:
 ../../../Qt/6.2.2/macos/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../Qt/6.2.2/macos/mkspecs/features/exclusive_builds.prf:
 ../../../Qt/6.2.2/macos/mkspecs/features/mac/sdk.prf:
 ../../../Qt/6.2.2/macos/mkspecs/features/toolchain.prf:
@@ -508,6 +512,7 @@ Makefile: ../projectMainFile/projectMainFile.pro ../../../Qt/6.2.2/macos/mkspecs
 ../projectMainFile/projectMainFile.pro:
 ../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Resources/QtWidgets.prl:
 ../../../Qt/6.2.2/macos/lib/QtGui.framework/Resources/QtGui.prl:
+../../../Qt/6.2.2/macos/lib/QtSql.framework/Resources/QtSql.prl:
 ../../../Qt/6.2.2/macos/lib/QtCore.framework/Resources/QtCore.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ../projectMainFile/projectMainFile.pro -spec macx-clang CONFIG+=debug CONFIG+=qml_debug
@@ -550,6 +555,7 @@ clean: compiler_clean
 
 distclean: clean 
 	-$(DEL_FILE) -r projectMainFile.app
+	-$(DEL_FILE) .qmake.stash
 	-$(DEL_FILE) Makefile
 
 
@@ -574,8 +580,32 @@ compiler_moc_header_clean:
 moc_mainwindow.cpp: ../projectMainFile/mainwindow.h \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QtSql \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QSqlDatabase \
+		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QMessageBox \
+		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qmessagebox.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QSqlQuery \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QSqlQueryModel \
+		../../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/QStandardItemModel \
+		../../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/qstandarditemmodel.h \
+		../../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/QStandardItem \
 		../../../Qt/6.2.2/macos/libexec/moc
-	/Users/bensonchiu/Qt/6.2.2/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=12 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/bensonchiu/Qt/6.2.2/macos/mkspecs/macx-clang -I/Users/bensonchiu/allData/PD110-1-FP/projectMainFile -I/Users/bensonchiu/Qt/6.2.2/macos/lib/QtWidgets.framework/Headers -I/Users/bensonchiu/Qt/6.2.2/macos/lib/QtGui.framework/Headers -I/Users/bensonchiu/Qt/6.2.2/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/bensonchiu/Qt/6.2.2/macos/lib ../projectMainFile/mainwindow.h -o moc_mainwindow.cpp
+	/Users/bensonchiu/Qt/6.2.2/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=12 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/bensonchiu/Qt/6.2.2/macos/mkspecs/macx-clang -I/Users/bensonchiu/allData/PD110-1-FP/projectMainFile -I/Users/bensonchiu/Qt/6.2.2/macos/lib/QtWidgets.framework/Headers -I/Users/bensonchiu/Qt/6.2.2/macos/lib/QtGui.framework/Headers -I/Users/bensonchiu/Qt/6.2.2/macos/lib/QtSql.framework/Headers -I/Users/bensonchiu/Qt/6.2.2/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/bensonchiu/Qt/6.2.2/macos/lib ../projectMainFile/mainwindow.h -o moc_mainwindow.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -603,6 +633,30 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 main.o: ../projectMainFile/main.cpp ../projectMainFile/mainwindow.h \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QtSql \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QSqlDatabase \
+		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QMessageBox \
+		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qmessagebox.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QSqlQuery \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QSqlQueryModel \
+		../../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/QStandardItemModel \
+		../../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/qstandarditemmodel.h \
+		../../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/QStandardItem \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QApplication \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../projectMainFile/main.cpp
@@ -610,7 +664,33 @@ main.o: ../projectMainFile/main.cpp ../projectMainFile/mainwindow.h \
 mainwindow.o: ../projectMainFile/mainwindow.cpp ../projectMainFile/mainwindow.h \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		ui_mainwindow.h
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QtSql \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QSqlDatabase \
+		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QMessageBox \
+		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qmessagebox.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QSqlQuery \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QSqlQueryModel \
+		../../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/QStandardItemModel \
+		../../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/qstandarditemmodel.h \
+		../../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/QStandardItem \
+		ui_mainwindow.h \
+		../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QDebug \
+		../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qdebug.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../projectMainFile/mainwindow.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 

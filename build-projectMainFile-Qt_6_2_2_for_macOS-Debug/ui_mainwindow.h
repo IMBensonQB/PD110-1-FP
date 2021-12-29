@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
@@ -36,6 +37,15 @@ public:
     QLineEdit *courseLineEdit;
     QPushButton *searchButton;
     QGroupBox *groupBox_2;
+    QCheckBox *checkBox_0;
+    QCheckBox *checkBox_01;
+    QCheckBox *checkBox_02;
+    QCheckBox *checkBox_03;
+    QCheckBox *checkBox_04;
+    QCheckBox *checkBox_2;
+    QCheckBox *checkBox_3;
+    QCheckBox *checkBox_4;
+    QCheckBox *checkBox_5;
     QTableView *tableView;
     QGroupBox *groupBox_3;
     QLabel *label;
@@ -92,6 +102,33 @@ public:
         groupBox_2 = new QGroupBox(centralwidget);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
         groupBox_2->setGeometry(QRect(20, 80, 120, 351));
+        checkBox_0 = new QCheckBox(groupBox_2);
+        checkBox_0->setObjectName(QString::fromUtf8("checkBox_0"));
+        checkBox_0->setGeometry(QRect(10, 40, 85, 20));
+        checkBox_01 = new QCheckBox(groupBox_2);
+        checkBox_01->setObjectName(QString::fromUtf8("checkBox_01"));
+        checkBox_01->setGeometry(QRect(20, 70, 85, 20));
+        checkBox_02 = new QCheckBox(groupBox_2);
+        checkBox_02->setObjectName(QString::fromUtf8("checkBox_02"));
+        checkBox_02->setGeometry(QRect(20, 100, 85, 20));
+        checkBox_03 = new QCheckBox(groupBox_2);
+        checkBox_03->setObjectName(QString::fromUtf8("checkBox_03"));
+        checkBox_03->setGeometry(QRect(20, 130, 85, 20));
+        checkBox_04 = new QCheckBox(groupBox_2);
+        checkBox_04->setObjectName(QString::fromUtf8("checkBox_04"));
+        checkBox_04->setGeometry(QRect(20, 160, 85, 20));
+        checkBox_2 = new QCheckBox(groupBox_2);
+        checkBox_2->setObjectName(QString::fromUtf8("checkBox_2"));
+        checkBox_2->setGeometry(QRect(10, 200, 85, 20));
+        checkBox_3 = new QCheckBox(groupBox_2);
+        checkBox_3->setObjectName(QString::fromUtf8("checkBox_3"));
+        checkBox_3->setGeometry(QRect(10, 230, 85, 20));
+        checkBox_4 = new QCheckBox(groupBox_2);
+        checkBox_4->setObjectName(QString::fromUtf8("checkBox_4"));
+        checkBox_4->setGeometry(QRect(10, 260, 85, 20));
+        checkBox_5 = new QCheckBox(groupBox_2);
+        checkBox_5->setObjectName(QString::fromUtf8("checkBox_5"));
+        checkBox_5->setGeometry(QRect(10, 290, 85, 20));
         tableView = new QTableView(centralwidget);
         tableView->setObjectName(QString::fromUtf8("tableView"));
         tableView->setGeometry(QRect(160, 100, 541, 331));
@@ -155,7 +192,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 979, 24));
+        menubar->setGeometry(QRect(0, 0, 979, 22));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -176,6 +213,15 @@ public:
 
         searchButton->setText(QCoreApplication::translate("MainWindow", "\346\220\234\345\260\213", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("MainWindow", "\350\252\262\347\250\213\345\210\206\351\241\236", nullptr));
+        checkBox_0->setText(QCoreApplication::translate("MainWindow", "\345\277\205\344\277\256", nullptr));
+        checkBox_01->setText(QCoreApplication::translate("MainWindow", "\345\244\247\344\270\200", nullptr));
+        checkBox_02->setText(QCoreApplication::translate("MainWindow", "\345\244\247\344\272\214", nullptr));
+        checkBox_03->setText(QCoreApplication::translate("MainWindow", "\345\244\247\344\270\211", nullptr));
+        checkBox_04->setText(QCoreApplication::translate("MainWindow", "\345\244\247\345\233\233", nullptr));
+        checkBox_2->setText(QCoreApplication::translate("MainWindow", "\347\263\273\345\256\232\351\201\270\344\277\256", nullptr));
+        checkBox_3->setText(QCoreApplication::translate("MainWindow", "\344\270\200\350\210\254\351\201\270\344\277\256", nullptr));
+        checkBox_4->setText(QCoreApplication::translate("MainWindow", "\345\205\261\345\220\214", nullptr));
+        checkBox_5->setText(QCoreApplication::translate("MainWindow", "\351\200\232\350\255\230", nullptr));
         groupBox_3->setTitle(QCoreApplication::translate("MainWindow", "Timetable", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "\344\270\200", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "\344\272\214", nullptr));

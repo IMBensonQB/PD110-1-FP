@@ -11,17 +11,17 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTableWidget>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -36,16 +36,26 @@ public:
     QLineEdit *courseLineEdit;
     QPushButton *searchButton;
     QGroupBox *groupBox_2;
-    QCheckBox *checkBox;
-    QCheckBox *checkBox_4;
-    QCheckBox *checkBox_5;
-    QCheckBox *checkBox_3;
-    QCheckBox *checkBox_2;
-    QCheckBox *checkBox_6;
-    QCheckBox *checkBox_7;
-    QCheckBox *checkBox_8;
-    QCheckBox *checkBox_9;
-    QTableWidget *tableWidget;
+    QTableView *tableView;
+    QGroupBox *groupBox_3;
+    QLabel *label;
+    QLabel *label_2;
+    QLabel *label_3;
+    QLabel *label_4;
+    QLabel *label_5;
+    QLabel *label_6;
+    QLabel *label_7;
+    QLabel *label_8;
+    QLabel *label_9;
+    QLabel *label_10;
+    QLabel *label_11;
+    QLabel *label_12;
+    QLabel *label_13;
+    QLabel *label_14;
+    QLabel *label_15;
+    QLabel *label_16;
+    QLabel *label_17;
+    QLabel *label_18;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -53,7 +63,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1285, 600);
+        MainWindow->resize(979, 600);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         groupBox = new QGroupBox(centralwidget);
@@ -82,76 +92,70 @@ public:
         groupBox_2 = new QGroupBox(centralwidget);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
         groupBox_2->setGeometry(QRect(20, 80, 120, 351));
-        checkBox = new QCheckBox(groupBox_2);
-        checkBox->setObjectName(QString::fromUtf8("checkBox"));
-        checkBox->setGeometry(QRect(10, 30, 85, 20));
-        checkBox_4 = new QCheckBox(groupBox_2);
-        checkBox_4->setObjectName(QString::fromUtf8("checkBox_4"));
-        checkBox_4->setGeometry(QRect(10, 230, 85, 20));
-        checkBox_5 = new QCheckBox(groupBox_2);
-        checkBox_5->setObjectName(QString::fromUtf8("checkBox_5"));
-        checkBox_5->setGeometry(QRect(10, 260, 85, 20));
-        checkBox_3 = new QCheckBox(groupBox_2);
-        checkBox_3->setObjectName(QString::fromUtf8("checkBox_3"));
-        checkBox_3->setGeometry(QRect(10, 200, 85, 20));
-        checkBox_2 = new QCheckBox(groupBox_2);
-        checkBox_2->setObjectName(QString::fromUtf8("checkBox_2"));
-        checkBox_2->setGeometry(QRect(10, 170, 85, 20));
-        checkBox_6 = new QCheckBox(groupBox_2);
-        checkBox_6->setObjectName(QString::fromUtf8("checkBox_6"));
-        checkBox_6->setGeometry(QRect(30, 50, 85, 20));
-        checkBox_7 = new QCheckBox(groupBox_2);
-        checkBox_7->setObjectName(QString::fromUtf8("checkBox_7"));
-        checkBox_7->setGeometry(QRect(30, 80, 85, 20));
-        checkBox_8 = new QCheckBox(groupBox_2);
-        checkBox_8->setObjectName(QString::fromUtf8("checkBox_8"));
-        checkBox_8->setGeometry(QRect(30, 110, 85, 20));
-        checkBox_9 = new QCheckBox(groupBox_2);
-        checkBox_9->setObjectName(QString::fromUtf8("checkBox_9"));
-        checkBox_9->setGeometry(QRect(30, 140, 85, 20));
-        tableWidget = new QTableWidget(centralwidget);
-        if (tableWidget->columnCount() < 9)
-            tableWidget->setColumnCount(9);
-        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
-        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
-        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(2, __qtablewidgetitem2);
-        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(3, __qtablewidgetitem3);
-        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(4, __qtablewidgetitem4);
-        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(5, __qtablewidgetitem5);
-        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(6, __qtablewidgetitem6);
-        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(7, __qtablewidgetitem7);
-        QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
-        tableWidget->setHorizontalHeaderItem(8, __qtablewidgetitem8);
-        if (tableWidget->rowCount() < 7)
-            tableWidget->setRowCount(7);
-        QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
-        tableWidget->setVerticalHeaderItem(0, __qtablewidgetitem9);
-        QTableWidgetItem *__qtablewidgetitem10 = new QTableWidgetItem();
-        tableWidget->setVerticalHeaderItem(1, __qtablewidgetitem10);
-        QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
-        tableWidget->setVerticalHeaderItem(2, __qtablewidgetitem11);
-        QTableWidgetItem *__qtablewidgetitem12 = new QTableWidgetItem();
-        tableWidget->setVerticalHeaderItem(3, __qtablewidgetitem12);
-        QTableWidgetItem *__qtablewidgetitem13 = new QTableWidgetItem();
-        tableWidget->setVerticalHeaderItem(4, __qtablewidgetitem13);
-        QTableWidgetItem *__qtablewidgetitem14 = new QTableWidgetItem();
-        tableWidget->setVerticalHeaderItem(5, __qtablewidgetitem14);
-        QTableWidgetItem *__qtablewidgetitem15 = new QTableWidgetItem();
-        tableWidget->setVerticalHeaderItem(6, __qtablewidgetitem15);
-        tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
-        tableWidget->setGeometry(QRect(150, 100, 921, 241));
+        tableView = new QTableView(centralwidget);
+        tableView->setObjectName(QString::fromUtf8("tableView"));
+        tableView->setGeometry(QRect(160, 100, 541, 331));
+        groupBox_3 = new QGroupBox(centralwidget);
+        groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
+        groupBox_3->setGeometry(QRect(740, 30, 221, 491));
+        label = new QLabel(groupBox_3);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(40, 40, 21, 16));
+        label_2 = new QLabel(groupBox_3);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setGeometry(QRect(70, 40, 21, 16));
+        label_3 = new QLabel(groupBox_3);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setGeometry(QRect(100, 40, 21, 16));
+        label_4 = new QLabel(groupBox_3);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setGeometry(QRect(130, 40, 21, 16));
+        label_5 = new QLabel(groupBox_3);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setGeometry(QRect(160, 40, 21, 16));
+        label_6 = new QLabel(groupBox_3);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setGeometry(QRect(20, 60, 21, 16));
+        label_7 = new QLabel(groupBox_3);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setGeometry(QRect(20, 90, 21, 16));
+        label_8 = new QLabel(groupBox_3);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+        label_8->setGeometry(QRect(20, 120, 21, 16));
+        label_9 = new QLabel(groupBox_3);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
+        label_9->setGeometry(QRect(20, 150, 21, 16));
+        label_10 = new QLabel(groupBox_3);
+        label_10->setObjectName(QString::fromUtf8("label_10"));
+        label_10->setGeometry(QRect(20, 180, 21, 16));
+        label_11 = new QLabel(groupBox_3);
+        label_11->setObjectName(QString::fromUtf8("label_11"));
+        label_11->setGeometry(QRect(20, 210, 21, 16));
+        label_12 = new QLabel(groupBox_3);
+        label_12->setObjectName(QString::fromUtf8("label_12"));
+        label_12->setGeometry(QRect(20, 240, 21, 16));
+        label_13 = new QLabel(groupBox_3);
+        label_13->setObjectName(QString::fromUtf8("label_13"));
+        label_13->setGeometry(QRect(20, 270, 21, 16));
+        label_14 = new QLabel(groupBox_3);
+        label_14->setObjectName(QString::fromUtf8("label_14"));
+        label_14->setGeometry(QRect(20, 300, 21, 16));
+        label_15 = new QLabel(groupBox_3);
+        label_15->setObjectName(QString::fromUtf8("label_15"));
+        label_15->setGeometry(QRect(20, 330, 21, 16));
+        label_16 = new QLabel(groupBox_3);
+        label_16->setObjectName(QString::fromUtf8("label_16"));
+        label_16->setGeometry(QRect(20, 360, 21, 16));
+        label_17 = new QLabel(groupBox_3);
+        label_17->setObjectName(QString::fromUtf8("label_17"));
+        label_17->setGeometry(QRect(20, 390, 21, 16));
+        label_18 = new QLabel(groupBox_3);
+        label_18->setObjectName(QString::fromUtf8("label_18"));
+        label_18->setGeometry(QRect(20, 420, 21, 16));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1285, 22));
+        menubar->setGeometry(QRect(0, 0, 979, 24));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -172,45 +176,25 @@ public:
 
         searchButton->setText(QCoreApplication::translate("MainWindow", "\346\220\234\345\260\213", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("MainWindow", "\350\252\262\347\250\213\345\210\206\351\241\236", nullptr));
-        checkBox->setText(QCoreApplication::translate("MainWindow", "\345\277\205\344\277\256", nullptr));
-        checkBox_4->setText(QCoreApplication::translate("MainWindow", "\345\205\261\345\220\214", nullptr));
-        checkBox_5->setText(QCoreApplication::translate("MainWindow", "\351\200\232\350\255\230", nullptr));
-        checkBox_3->setText(QCoreApplication::translate("MainWindow", "\344\270\200\350\210\254\351\201\270\344\277\256", nullptr));
-        checkBox_2->setText(QCoreApplication::translate("MainWindow", "\347\263\273\350\250\202\351\201\270\344\277\256", nullptr));
-        checkBox_6->setText(QCoreApplication::translate("MainWindow", "\345\244\247\344\270\200", nullptr));
-        checkBox_7->setText(QCoreApplication::translate("MainWindow", "\345\244\247\344\272\214", nullptr));
-        checkBox_8->setText(QCoreApplication::translate("MainWindow", "\345\244\247\344\270\211", nullptr));
-        checkBox_9->setText(QCoreApplication::translate("MainWindow", "\345\244\247\345\233\233", nullptr));
-        QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
-        ___qtablewidgetitem->setText(QCoreApplication::translate("MainWindow", "\357\274\213", nullptr));
-        QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QCoreApplication::translate("MainWindow", "\347\217\255\346\254\241", nullptr));
-        QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QCoreApplication::translate("MainWindow", "\350\252\262\347\250\213", nullptr));
-        QTableWidgetItem *___qtablewidgetitem3 = tableWidget->horizontalHeaderItem(3);
-        ___qtablewidgetitem3->setText(QCoreApplication::translate("MainWindow", "\346\225\231\345\270\253", nullptr));
-        QTableWidgetItem *___qtablewidgetitem4 = tableWidget->horizontalHeaderItem(4);
-        ___qtablewidgetitem4->setText(QCoreApplication::translate("MainWindow", "\346\231\202\351\226\223", nullptr));
-        QTableWidgetItem *___qtablewidgetitem5 = tableWidget->horizontalHeaderItem(5);
-        ___qtablewidgetitem5->setText(QCoreApplication::translate("MainWindow", "\346\225\231\345\256\244", nullptr));
-        QTableWidgetItem *___qtablewidgetitem6 = tableWidget->horizontalHeaderItem(6);
-        ___qtablewidgetitem6->setText(QCoreApplication::translate("MainWindow", "\345\255\270\345\210\206", nullptr));
-        QTableWidgetItem *___qtablewidgetitem7 = tableWidget->horizontalHeaderItem(7);
-        ___qtablewidgetitem7->setText(QCoreApplication::translate("MainWindow", "\345\212\240\351\201\270", nullptr));
-        QTableWidgetItem *___qtablewidgetitem8 = tableWidget->horizontalHeaderItem(8);
-        ___qtablewidgetitem8->setText(QCoreApplication::translate("MainWindow", "\345\205\266\345\256\203", nullptr));
-        QTableWidgetItem *___qtablewidgetitem9 = tableWidget->verticalHeaderItem(0);
-        ___qtablewidgetitem9->setText(QCoreApplication::translate("MainWindow", "1", nullptr));
-        QTableWidgetItem *___qtablewidgetitem10 = tableWidget->verticalHeaderItem(1);
-        ___qtablewidgetitem10->setText(QCoreApplication::translate("MainWindow", "2", nullptr));
-        QTableWidgetItem *___qtablewidgetitem11 = tableWidget->verticalHeaderItem(2);
-        ___qtablewidgetitem11->setText(QCoreApplication::translate("MainWindow", "3", nullptr));
-        QTableWidgetItem *___qtablewidgetitem12 = tableWidget->verticalHeaderItem(3);
-        ___qtablewidgetitem12->setText(QCoreApplication::translate("MainWindow", "4", nullptr));
-        QTableWidgetItem *___qtablewidgetitem13 = tableWidget->verticalHeaderItem(4);
-        ___qtablewidgetitem13->setText(QCoreApplication::translate("MainWindow", "5", nullptr));
-        QTableWidgetItem *___qtablewidgetitem14 = tableWidget->verticalHeaderItem(5);
-        ___qtablewidgetitem14->setText(QCoreApplication::translate("MainWindow", "6", nullptr));
+        groupBox_3->setTitle(QCoreApplication::translate("MainWindow", "Timetable", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "\344\270\200", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "\344\272\214", nullptr));
+        label_3->setText(QCoreApplication::translate("MainWindow", "\344\270\211", nullptr));
+        label_4->setText(QCoreApplication::translate("MainWindow", "\345\233\233", nullptr));
+        label_5->setText(QCoreApplication::translate("MainWindow", "\344\272\224", nullptr));
+        label_6->setText(QCoreApplication::translate("MainWindow", "1", nullptr));
+        label_7->setText(QCoreApplication::translate("MainWindow", "2", nullptr));
+        label_8->setText(QCoreApplication::translate("MainWindow", "3", nullptr));
+        label_9->setText(QCoreApplication::translate("MainWindow", "4", nullptr));
+        label_10->setText(QCoreApplication::translate("MainWindow", "5", nullptr));
+        label_11->setText(QCoreApplication::translate("MainWindow", "6", nullptr));
+        label_12->setText(QCoreApplication::translate("MainWindow", "7", nullptr));
+        label_13->setText(QCoreApplication::translate("MainWindow", "8", nullptr));
+        label_14->setText(QCoreApplication::translate("MainWindow", "9", nullptr));
+        label_15->setText(QCoreApplication::translate("MainWindow", "10", nullptr));
+        label_16->setText(QCoreApplication::translate("MainWindow", "A", nullptr));
+        label_17->setText(QCoreApplication::translate("MainWindow", "B", nullptr));
+        label_18->setText(QCoreApplication::translate("MainWindow", "C", nullptr));
     } // retranslateUi
 
 };

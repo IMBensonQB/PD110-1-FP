@@ -57,7 +57,8 @@ SOURCES       = ../projectMainFile/main.cpp \
 OBJECTS       = main.o \
 		mainwindow.o \
 		moc_mainwindow.o
-DIST          = ../../../Qt/6.2.2/macos/mkspecs/features/spec_pre.prf \
+DIST          = ../projectMainFile/Database/course.db \
+		../../../Qt/6.2.2/macos/mkspecs/features/spec_pre.prf \
 		../../../Qt/6.2.2/macos/mkspecs/features/device_config.prf \
 		../../../Qt/6.2.2/macos/mkspecs/common/unix.conf \
 		../../../Qt/6.2.2/macos/mkspecs/common/mac.conf \
@@ -197,7 +198,8 @@ DIST          = ../../../Qt/6.2.2/macos/mkspecs/features/spec_pre.prf \
 		../../../Qt/6.2.2/macos/mkspecs/features/exceptions.prf \
 		../../../Qt/6.2.2/macos/mkspecs/features/yacc.prf \
 		../../../Qt/6.2.2/macos/mkspecs/features/lex.prf \
-		../projectMainFile/projectMainFile.pro ../projectMainFile/mainwindow.h ../projectMainFile/main.cpp \
+		../projectMainFile/projectMainFile.pro ../projectMainFile/database.h \
+		../projectMainFile/mainwindow.h ../projectMainFile/main.cpp \
 		../projectMainFile/mainwindow.cpp
 QMAKE_TARGET  = projectMainFile
 DESTDIR       = 
@@ -543,7 +545,7 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../projectMainFile/mainwindow.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../projectMainFile/database.h ../projectMainFile/mainwindow.h $(DISTDIR)/
 	$(COPY_FILE) --parents ../projectMainFile/main.cpp ../projectMainFile/mainwindow.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../projectMainFile/mainwindow.ui $(DISTDIR)/
 
@@ -580,30 +582,6 @@ compiler_moc_header_clean:
 moc_mainwindow.cpp: ../projectMainFile/mainwindow.h \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QtSql \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqldriver.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlerror.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlfield.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlindex.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlquery.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlresult.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QSqlDatabase \
-		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QMessageBox \
-		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qmessagebox.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QSqlQuery \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QSqlQueryModel \
-		../../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/QStandardItemModel \
-		../../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/qstandarditemmodel.h \
-		../../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/QStandardItem \
 		../../../Qt/6.2.2/macos/libexec/moc
 	/Users/bensonchiu/Qt/6.2.2/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=12 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/bensonchiu/Qt/6.2.2/macos/mkspecs/macx-clang -I/Users/bensonchiu/allData/PD110-1-FP/projectMainFile -I/Users/bensonchiu/Qt/6.2.2/macos/lib/QtWidgets.framework/Headers -I/Users/bensonchiu/Qt/6.2.2/macos/lib/QtGui.framework/Headers -I/Users/bensonchiu/Qt/6.2.2/macos/lib/QtSql.framework/Headers -I/Users/bensonchiu/Qt/6.2.2/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/bensonchiu/Qt/6.2.2/macos/lib ../projectMainFile/mainwindow.h -o moc_mainwindow.cpp
 
@@ -633,30 +611,6 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 main.o: ../projectMainFile/main.cpp ../projectMainFile/mainwindow.h \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QtSql \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqldriver.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlerror.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlfield.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlindex.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlquery.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlresult.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QSqlDatabase \
-		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QMessageBox \
-		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qmessagebox.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QSqlQuery \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QSqlQueryModel \
-		../../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/QStandardItemModel \
-		../../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/qstandarditemmodel.h \
-		../../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/QStandardItem \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QApplication \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../projectMainFile/main.cpp
@@ -664,30 +618,6 @@ main.o: ../projectMainFile/main.cpp ../projectMainFile/mainwindow.h \
 mainwindow.o: ../projectMainFile/mainwindow.cpp ../projectMainFile/mainwindow.h \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QtSql \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqldriver.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlerror.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlfield.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlindex.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlquery.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlresult.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QSqlDatabase \
-		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QMessageBox \
-		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qmessagebox.h \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QSqlQuery \
-		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QSqlQueryModel \
-		../../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/QStandardItemModel \
-		../../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/qstandarditemmodel.h \
-		../../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/QStandardItem \
 		ui_mainwindow.h \
 		../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QDebug \
 		../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qdebug.h

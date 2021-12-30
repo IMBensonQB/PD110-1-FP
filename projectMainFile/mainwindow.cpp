@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QDebug>
-
+#include <QCheckBox>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -149,3 +149,31 @@ void MainWindow::on_checkBox_5_stateChanged(int arg1)
     }
 
 }
+
+void MainWindow::update(QCheckBox *cb, int num)
+{
+    if(ui -> checkBox_5 -> isChecked())
+    {
+        timeData.push_back(num);
+    }
+    else
+    {
+        for(int i = 0; i < timeData.size(); i++)
+        {
+            if(timeData[i] == num)
+                timeData.remove(i);
+        }
+
+    }
+
+
+
+}
+
+void MainWindow::on_tt1_0_stateChanged(int arg1)
+{
+    update(tt1_0, 100);
+}
+
+
+

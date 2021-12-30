@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QVector>
+#include <QCheckBox>
 
 
 QT_BEGIN_NAMESPACE
@@ -30,9 +32,14 @@ private slots:
     void on_checkBox_5_stateChanged(int arg1);
 
 
+    void on_tt1_0_stateChanged(int arg1);
+    void update(QCheckBox *, int num);
+
 private:
     Ui::MainWindow *ui;
     bool chooseCat[8] = {0,0,0,0,0,0,0,0};
+    QVector<int> timeData;
+
 
 };
 

@@ -2,13 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QtSql>
-#include <QSqlDatabase>
-#include <QMessageBox>
-#include <QSqlQuery>
-#include <QSqlQueryModel>
-#include <QStandardItemModel>
-#include <QStandardItem>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -41,4 +35,5 @@ private:
     bool chooseCat[8] = {0,0,0,0,0,0,0,0};
 
 };
+
 #endif // MAINWINDOW_H

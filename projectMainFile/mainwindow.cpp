@@ -149,8 +149,3 @@ void MainWindow::on_checkBox_5_stateChanged(int arg1)
     }
 
 }
-
-
-
-
-

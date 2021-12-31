@@ -1,3 +1,6 @@
+Outdated version. SQL data base not yet updated.
+12/31.
+
 sqlite> create table course(
    ...> id int auto_increment,
    ...> flowWater int,
@@ -23,3 +26,55 @@ sqlite> create table course(
    ...> FEnd int,
    ...> note varchar(500)
    ...> );
+
+Excel File
+
+create table course(
+id int auto_increment, /* our own id*/
+ser_no int, /*FlowWater*/
+co_chg int,
+dpt_code int, 
+dptname varchar(15),
+cou_code varchar(15),
+class int, /*班次*/
+year int, /*年級*/
+credit int,
+forh bool, /*半年 0 or全年 1*/
+sel_code int, /*必帶 0 , 必修 1 選修 2*/
+cou_cname varchar(50),
+cou_ename varchar(100),
+tea_cname varchar(20),
+clsrom_1 varchar(10), 
+clsrom_2 varchar(10), 
+daytime varchar(100), /*時間，str模式*/
+mark varchar(300), /*備註*/
+co_tp int, /*學校excel 2 == 共同必修 */
+co_gmark int, /*用途不明*/
+clsrom_3 varchar(10), 
+clsrom_4 varchar(10), 
+clsrom_5 varchar(10), 
+clsrom_6 varchar(10), 
+co_select int, /*加選*/
+tlec int, /*正課時數*/
+tlab int, /*實驗時數*/
+time0 int,
+time1 int,
+time2 int,
+time3 int,
+time4 int,
+time5 int,
+time6 int,
+time7 int,
+time8 int,
+time9 int,
+time10 int,
+time11 int,
+time12 int,
+time13 int,
+time14 int,
+time15 int,
+time16 int,
+time17 int,
+time18 int,
+time19 int /* need to parse it from excel*/
+);

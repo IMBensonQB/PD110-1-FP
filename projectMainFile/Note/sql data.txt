@@ -27,10 +27,10 @@ sqlite> create table course(
    ...> note varchar(500)
    ...> );
 
-Excel File
+New Version, column name same as excel file.
 
 create table course(
-id int auto_increment, /* our own id*/
+id int auto_increment primary key, /* our own id*/
 ser_no int, /*FlowWater*/
 co_chg int,
 dpt_code int, 
@@ -76,5 +76,12 @@ time15 int,
 time16 int,
 time17 int,
 time18 int,
-time19 int /* need to parse it from excel*/
+time19 int, /* need to parse it from excel*/
+gradelimit int default 0, /* 0==不限, 1==限大1 2以上==限大n以上*/
+majorlimit bool default false,/*限本系*/
+category int, /* 根據放在哪個excel檔案決定*/
+category2 int, /*擴充用*/
+noOpen bool default false, /*初選不開放*/
+libcat1 int, /*通識分類*/
+libcat2 int
 );

@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "database.h"
 #include "ui_mainwindow.h"
 #include <QDebug>
 #include <QCheckBox>
@@ -10,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-
+    Queven Liu = "Handsome";
 
 }
 
@@ -24,6 +25,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_searchButton_clicked()
 {
     //Get Catagories
+        QSqlDatabase db = getDatabaseConnection();
         if(chooseCat[0])
             catagories.push_back("大一必修");
         if(chooseCat[1])
@@ -71,12 +73,11 @@ void MainWindow::on_searchButton_clicked()
 
     //Show the table
 
-
-
-
-
-
-
+        QString query = sqlQueryMaker(chooseCat, searchText, searchTextType, timeVec, catagories);
+        QSqlQueryModel *model;
+        model = new QSqlQueryModel(this);
+        model->setQuery(query);
+        ui->tableView->setModel(model);
 
 }
 

@@ -582,6 +582,12 @@ compiler_moc_header_clean:
 moc_mainwindow.cpp: ../projectMainFile/mainwindow.h \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QVector \
+		../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qvector.h \
+		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QCheckBox \
+		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qcheckbox.h \
+		../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QString \
+		../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qstring.h \
 		../../../Qt/6.2.2/macos/libexec/moc
 	/Users/bensonchiu/Qt/6.2.2/macos/libexec/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -D__cplusplus=199711L -D__APPLE_CC__=6000 -D__clang__ -D__clang_major__=12 -D__clang_minor__=0 -D__clang_patchlevel__=0 -D__GNUC__=4 -D__GNUC_MINOR__=2 -D__GNUC_PATCHLEVEL__=1 -I/Users/bensonchiu/Qt/6.2.2/macos/mkspecs/macx-clang -I/Users/bensonchiu/allData/PD110-1-FP/projectMainFile -I/Users/bensonchiu/Qt/6.2.2/macos/lib/QtWidgets.framework/Headers -I/Users/bensonchiu/Qt/6.2.2/macos/lib/QtGui.framework/Headers -I/Users/bensonchiu/Qt/6.2.2/macos/lib/QtSql.framework/Headers -I/Users/bensonchiu/Qt/6.2.2/macos/lib/QtCore.framework/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1 -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.0/include -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -F/Users/bensonchiu/Qt/6.2.2/macos/lib ../projectMainFile/mainwindow.h -o moc_mainwindow.cpp
 
@@ -611,6 +617,12 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 main.o: ../projectMainFile/main.cpp ../projectMainFile/mainwindow.h \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QVector \
+		../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qvector.h \
+		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QCheckBox \
+		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qcheckbox.h \
+		../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QString \
+		../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qstring.h \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QApplication \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../projectMainFile/main.cpp
@@ -618,6 +630,12 @@ main.o: ../projectMainFile/main.cpp ../projectMainFile/mainwindow.h \
 mainwindow.o: ../projectMainFile/mainwindow.cpp ../projectMainFile/mainwindow.h \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qmainwindow.h \
+		../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QVector \
+		../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qvector.h \
+		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QCheckBox \
+		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qcheckbox.h \
+		../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QString \
+		../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qstring.h \
 		ui_mainwindow.h \
 		../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QDebug \
 		../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qdebug.h

@@ -20,6 +20,68 @@ MainWindow::~MainWindow()
 }
 
 
+
+void MainWindow::on_searchButton_clicked()
+{
+    //Get Catagories
+        if(chooseCat[0])
+            catagories.push_back("大一必修");
+        if(chooseCat[1])
+            catagories.push_back("大二必修");
+        if(chooseCat[2])
+            catagories.push_back("大三必修");
+        if(chooseCat[3])
+            catagories.push_back("大四必修");
+        if(chooseCat[4])
+            catagories.push_back("系定選修");
+        if(chooseCat[5])
+            catagories.push_back("一般選修");
+        if(chooseCat[6])
+            catagories.push_back("共同");
+        if(chooseCat[7])
+            catagories.push_back("通識");
+
+        for(int i = 0; i < catagories.size(); i++)
+        {
+            qDebug() << catagories[i];
+        }
+
+   //Get timetable
+
+        for(int i = 1; i <= 6; i++)
+        {
+            for(int j = 0; j <= 15; j++)
+            {
+                if(timeTableChecked[i][j])
+                {
+                    timeVec.push_back(i*100 + j);
+                }
+            }
+        }
+
+        for(int i = 0; i < timeVec.size(); i++)
+        {
+            qDebug() << timeVec[i];
+        }
+
+    //Get inquiry
+        QString searchTextType = ui -> comboBox -> currentText();
+        QString searchText = ui -> courseLineEdit -> text();
+        qDebug() << searchTextType << " " << searchText;
+
+    //Show the table
+
+
+
+
+
+
+
+
+}
+
+
+
 void MainWindow::on_checkBox_0_stateChanged(int arg1)
 {
     if(ui-> checkBox_0 -> isChecked())
@@ -787,60 +849,4 @@ void MainWindow::on_tt6_14_stateChanged(int arg1)
 
 
 
-
-void MainWindow::on_searchButton_clicked()
-{
-    //Get Catagories
-
-
-        if(chooseCat[0])
-            catagories.push_back("大一必修");
-        if(chooseCat[1])
-            catagories.push_back("大二必修");
-        if(chooseCat[2])
-            catagories.push_back("大三必修");
-        if(chooseCat[3])
-            catagories.push_back("大四必修");
-        if(chooseCat[4])
-            catagories.push_back("系定選修");
-        if(chooseCat[5])
-            catagories.push_back("一般選修");
-        if(chooseCat[6])
-            catagories.push_back("共同");
-        if(chooseCat[7])
-            catagories.push_back("通識");
-
-        for(int i = 0; i < catagories.size(); i++)
-        {
-            qDebug() << catagories[i];
-        }
-
-   //Get timetable
-
-        for(int i = 1; i <= 6; i++)
-        {
-            for(int j = 0; j <= 15; j++)
-            {
-                if(timeTableChecked[i][j])
-                {
-                    timeVec.push_back(i*100 + j);
-                }
-            }
-        }
-
-        for(int i = 0; i < timeVec.size(); i++)
-        {
-            qDebug() << timeVec[i];
-        }
-
-    //Get inquiry
-        QString searchTextType = ui -> comboBox -> currentText();
-        QString searchText = ui -> courseLineEdit -> text();
-        qDebug() << searchTextType << " " << searchText;
-
-    //Show the table
-
-
-
-}
 

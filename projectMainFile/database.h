@@ -28,8 +28,14 @@ QSqlDatabase getDatabaseConnection()
 
 typedef QString Queven;
 
-QString sqlQueryMaker(bool* chooseCat, QString searchText, QString searchTextType, QVector<int> timeVec, QVector<QString> categories)
+QString sqlQueryMaker(bool* chooseCat, QString searchText, QString searchTextType, QVector<int> timeVec, QVector<QString> catagories)
 {
+    vector<int> timeNegVec; //負面表列
+    for (int i = 0; i < 7; i++)
+    {
+        for (int j = 0; j < 16; j++)
+            timeNegVec.push_back(i*100+j);
+    }
     QString query = "select * from course where";
     for (int i = 0; i < CATLEN; i++)
     {
@@ -37,14 +43,19 @@ QString sqlQueryMaker(bool* chooseCat, QString searchText, QString searchTextTyp
     }//chooseCat
     switch (hash<QString>{}(searchTextType))
     {
-
     }//search
-    int vecLen = timeVec.length();
+    int vecLen = timeVec.size();
+    for (int i = 0; i < vecLen; i++)
+    {
+        int temp = timeVec[i];
+        remove(timeNegVec.begin(), timeNegVec.end(), temp);
+    }
+    vecLen = timeNegVec.size();
     for (int i = 0; i < vecLen; i++)
     {
 
     }
-    vecLen = categories.length();
+    vecLen = catagories.size();
     for (int i = 0; i < vecLen; i++)
     {
 

@@ -14,7 +14,7 @@ cou_code,
 class , /*班次*/
 year , /*年級*/
 credit ,
-forh , /*半年  or全年 /
+forh , /*半年  or全年 */
 sel_code, /*必帶 , 必修 選修 */
 cou_cname ,
 cou_ename,
@@ -67,11 +67,14 @@ values ('''
         row[i] = row[i].replace("_x0000_", "")
         row[i] = row[i].replace("\"", "")
 
-    clsromlst = [14,15,19,20,21,22]
-    clasromstr = [""]*6
+    clsromlst = [13,14,19,20,21,22]
+    clasromstr = []
     for index in clsromlst:
-        if (len(row[index]) > 3):
+        if (row[index] != ""):
             clasromstr.append(row[index])
+            print(row[index])
+    for i in range(0, 6):
+        clasromstr.append("")
     for i in range(0,13):
         try:
             temp = int(row[i])
@@ -80,7 +83,7 @@ values ('''
             result += "'" + row[i] + "'" + ","
     for i in range(0, 2):
         result +=  "'" + clasromstr[i] + "'" + ","
-    for i in range(15, 18):
+    for i in range(15, 19):
         try:
             temp = int(row[i])
             result += str(temp) + ","
@@ -88,15 +91,16 @@ values ('''
             result += "\"" + row[i] + "\"" + ","
     for i in range(2, 6):
         result +=  "\"" + clasromstr[i] + "\"" + ","
-    for i in range(22, 26):
+    for i in range(23, 26):
         try:
             temp = int(row[i])
             result += str(temp) + ","
         except:
             result += "\"" + row[i] + "\"" + ","
     timeList = getTimeList(row[15])
-    for i in range(0,20):
-        result += str(timeList[i]) + ","
+    for i in timeList:
+        result += str(i) + ","
+    result += '0,'
     if "限大一" in row[16]:
         result += "1,"
         if "限大二" in row[16]:
@@ -156,6 +160,5 @@ type =  [input("Category: 0 共同 1 通識 2 系上課"), input("Category2: 0 �
 
 #https://ithelp.ithome.com.tw/articles/10246377
 for row in sheet.iter_rows(min_row=2, max_col=sheet.max_column, max_row=sheet.max_row, values_only=True):
-    print(sqlprompt(row, type))
     cursor.execute(sqlprompt(row, type))
 db.commit()

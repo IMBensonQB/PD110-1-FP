@@ -76,12 +76,21 @@ void MainWindow::on_searchButton_clicked()
 
         QString query = sqlQueryMaker(chooseCat, searchText, searchTextType, timeVec);
         qDebug() << query;
-        query = "select cou_ename, credit from course";
+
         QSqlQueryModel *model;
         model = new QSqlQueryModel(this);
         model->setQuery(query);
-        model->setHeaderData(0, Qt::Horizontal, tr("courseName"));
-        model->setHeaderData(1, Qt::Horizontal, tr("credit"));
+        model->setHeaderData(0, Qt::Horizontal, tr("課程識別碼"));
+        model->setHeaderData(1, Qt::Horizontal, tr("科系"));
+        model->setHeaderData(2, Qt::Horizontal, tr("必選修"));
+        model->setHeaderData(3, Qt::Horizontal, tr("班次"));
+        model->setHeaderData(4, Qt::Horizontal, tr("課程名稱"));
+        model->setHeaderData(5, Qt::Horizontal, tr("教師"));
+        model->setHeaderData(6, Qt::Horizontal, tr("時間"));
+        model->setHeaderData(7, Qt::Horizontal, tr("教室"));
+        model->setHeaderData(8, Qt::Horizontal, tr("學分"));
+        model->setHeaderData(9, Qt::Horizontal, tr("全半年"));
+        model->setHeaderData(10, Qt::Horizontal, tr("加選方式"));
         ui->tableView->setModel(model);
 
 }

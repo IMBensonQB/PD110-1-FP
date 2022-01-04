@@ -75,6 +75,7 @@ void MainWindow::on_searchButton_clicked()
     //Show the table
 
         QString query = sqlQueryMaker(chooseCat, searchText, searchTextType, timeVec);
+        qDebug() << query;
         QSqlQueryModel *model;
         model = new QSqlQueryModel(this);
         model->setQuery(query);

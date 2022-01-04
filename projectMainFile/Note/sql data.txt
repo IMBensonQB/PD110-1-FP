@@ -39,7 +39,7 @@ cou_code varchar(15),
 class int, /*班次*/
 year varchar(20), /*年級*/
 credit int,
-forh varchar(10), /*半年  or全年 /
+forh varchar(10), /*半年  or全年 */
 sel_code varchar(10), /*必帶 , 必修 選修 */
 cou_cname varchar(50),
 cou_ename varchar(100),

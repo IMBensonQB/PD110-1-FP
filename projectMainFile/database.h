@@ -35,24 +35,24 @@ QString sqlQueryMaker(bool* chooseCat, QString searchText, QString searchTextTyp
         for (int j = 0; j < 16; j++)
             timeNegVec.push_back(i*100+j);
     }
-    QString query = "select cou_code, dpt_name, sel_code ,class, cou_cname, tea_cname, daytime, clsrom_1, credit, forh, co_select from course where";
+    QString query = "select cou_code, dptname, sel_code,class, cou_cname, tea_cname, daytime, clsrom_1, credit, forh, co_select from course where";
     if(chooseCat[0])
-        query += "(year == \"1年級\") and (sel_code == \"必修\") and";
+        query += "(year == '1年級') and (sel_code == '必修') or ";
     if(chooseCat[1])
-        query += "(year == \"2年級\") and (sel_code == \"必修\") and";
+        query += "(year == '2年級') and (sel_code == '必修') or ";
     if(chooseCat[2])
-        query += "(year == \"3年級\") and (sel_code == \"必修\") and";
+        query += "(year == '3年級') and (sel_code == '必修') or ";
     if(chooseCat[3])
-        query += "(year == \"4年級\") and (sel_code == \"必修\") and";
+        query += "(year == '4年級') and (sel_code == '必修') or ";
     if(chooseCat[4])
-        query += "(sel_code == \"選修\") and (dptname == \"資管系\") and";
+        query += "(sel_code == '選修') and (dptname == '資管系') and ";
     if(chooseCat[5])
-        query += "(sel_code == \"選修\") and";
+        query += "(sel_code == '選修') and ";
     if(chooseCat[6])
-        query += "(category == 0 or category2 == 0) and";
+        query += "(category == 0) and ";
     //待編輯
     if(chooseCat[7])
-        query += "(category == 1 or category2 == 1) and";
+        query += "(category == 1 or category2 == 1) and ";
     switch (hash<QString>{}(searchTextType))
     {
         case 0 :
@@ -69,9 +69,10 @@ QString sqlQueryMaker(bool* chooseCat, QString searchText, QString searchTextTyp
     {
         for (int j = 0; j < 20; j++)
         {
-            query += "time" + QString::number(j) + "!=" + QString::number(timeNegVec[i]) + "and";
+            query += "time" + QString::number(j) + " != " + QString::number(timeNegVec[i]) + " and ";
         }
     }
+    query += "cou_name is not null;";
     return query;
 }
 

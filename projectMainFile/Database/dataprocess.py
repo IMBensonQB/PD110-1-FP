@@ -67,12 +67,12 @@ values ('''
         row[i] = row[i].replace("_x0000_", "")
         row[i] = row[i].replace("\"", "")
 
-    clsromlst = [12,13,18,19,20,21]
+    clsromlst = [14,15,19,20,21,22]
     clasromstr = [""]*6
     for index in clsromlst:
         if (len(row[index]) > 3):
             clasromstr.append(row[index])
-    for i in range(0,12):
+    for i in range(0,13):
         try:
             temp = int(row[i])
             result += str(temp) + ","
@@ -80,7 +80,7 @@ values ('''
             result += "\"" + row[i] + "\"" + ","
     for i in range(0, 2):
         result +=  "\"" + clasromstr[i] + "\"" + ","
-    for i in range(14, 18):
+    for i in range(15, 18):
         try:
             temp = int(row[i])
             result += str(temp) + ","

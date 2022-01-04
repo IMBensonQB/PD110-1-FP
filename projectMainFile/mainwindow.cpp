@@ -76,9 +76,12 @@ void MainWindow::on_searchButton_clicked()
 
         QString query = sqlQueryMaker(chooseCat, searchText, searchTextType, timeVec);
         qDebug() << query;
+        query = "select cou_ename, credit from course";
         QSqlQueryModel *model;
         model = new QSqlQueryModel(this);
         model->setQuery(query);
+        model->setHeaderData(0, Qt::Horizontal, tr("courseName"));
+        model->setHeaderData(1, Qt::Horizontal, tr("credit"));
         ui->tableView->setModel(model);
 
 }

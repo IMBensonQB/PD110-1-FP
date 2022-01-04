@@ -77,9 +77,9 @@ values ('''
             temp = int(row[i])
             result += str(temp) + ","
         except:
-            result += "\"" + row[i] + "\"" + ","
+            result += "'" + row[i] + "'" + ","
     for i in range(0, 2):
-        result +=  "\"" + clasromstr[i] + "\"" + ","
+        result +=  "'" + clasromstr[i] + "'" + ","
     for i in range(15, 18):
         try:
             temp = int(row[i])

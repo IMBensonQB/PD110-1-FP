@@ -5,12 +5,68 @@ import subprocess
 
 def sqlprompt(row, type):
     result = '''
-    insert into course values (DEFAULT,'''
-    for text in row:
-        try:
-            text = text.replace(" ", "")
-        except:
-            continue;
+    insert into course (
+ser_no , /*FlowWater*/
+co_chg ,
+dpt_code ,
+dptname,
+cou_code,
+class , /*班次*/
+year , /*年級*/
+credit ,
+forh , /*半年  or全年 /
+sel_code, /*必帶 , 必修 選修 */
+cou_cname ,
+cou_ename,
+tea_cname,
+clsrom_1 ,
+clsrom_2 ,
+daytime, /*時間，str模式*/
+mark, /*備註*/
+co_tp, /*學校excel 2 == 共同必修 */
+co_gmark, /*用途不明*/
+clsrom_3 ,
+clsrom_4 ,
+clsrom_5 ,
+clsrom_6 ,
+co_select , /*加選*/
+tlec, /*正課時數*/
+tlab, /*實驗時數*/
+time0 ,
+time1 ,
+time2 ,
+time3 ,
+time4 ,
+time5 ,
+time6 ,
+time7 ,
+time8 ,
+time9 ,
+time10 ,
+time11 ,
+time12 ,
+time13 ,
+time14 ,
+time15 ,
+time16 ,
+time17 ,
+time18 ,
+time19 , /* need to parse it from excel*/
+gradelimit, /* 0==不限, 1==限大1 2以上==限大n以上*/
+majorlimit,/*限本系*/
+category , /* 根據放在哪個excel檔案決定 0==共同 1==通識 2==本係*/
+category2 , /*擴充用*/
+noOpen, /*初選不開放*/
+libcat1, /*通識分類*/
+libcat2
+)
+values ('''
+    row = [str(row[i]) for i in range(0,26)]
+    for i in range(0, 26):
+        row[i] = row[i].replace(" ","")
+        row[i] = row[i].replace("_x0000_", "")
+        row[i] = row[i].replace("\"", "")
+
     clsromlst = [12,13,18,19,20,21]
     clasromstr = [""]*6
     for index in clsromlst:
@@ -32,7 +88,7 @@ def sqlprompt(row, type):
             result += "\"" + row[i] + "\"" + ","
     for i in range(2, 6):
         result +=  "\"" + clasromstr[i] + "\"" + ","
-    for i in range(21, 26):
+    for i in range(22, 26):
         try:
             temp = int(row[i])
             result += str(temp) + ","
@@ -87,12 +143,12 @@ def sqlprompt(row, type):
     result += ");"
     return result
 
-def getTimeList(str):
+def getTimeList(st):
     dir = os.getcwd()+"\\a"
-    return subprocess.Popen(dir + " " + str, stdout=subprocess.PIPE).communicate()[0].split()
+    return [str(int(i)) for i in subprocess.Popen(dir + " " + st, stdout=subprocess.PIPE).communicate()[0].split()]
 
 dir = os.getcwd()
-db = sqlite3.connect(dir + 'course.db');
+db = sqlite3.connect(dir + '\\course.db');
 cursor = db.cursor()
 workbook = openpyxl.load_workbook(dir + "\\CourseExcel\\" + input("input the name of the excel file"))
 sheet = workbook.worksheets[0]

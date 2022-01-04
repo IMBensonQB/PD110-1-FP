@@ -79,7 +79,7 @@ time18 int,
 time19 int, /* need to parse it from excel*/
 gradelimit int default 0, /* 0==不限, 1==限大1 2以上==限大n以上*/
 majorlimit bool default false,/*限本系*/
-category int, /* 根據放在哪個excel檔案決定*/
+category int, /* 根據放在哪個excel檔案決定 0==共同 1==通識 2==本係*/
 category2 int, /*擴充用*/
 noOpen bool default false, /*初選不開放*/
 libcat1 int, /*通識分類*/

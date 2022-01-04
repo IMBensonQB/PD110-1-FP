@@ -49,10 +49,10 @@ QString sqlQueryMaker(bool* chooseCat, QString searchText, QString searchTextTyp
     if(chooseCat[5])
         query += "(sel_code == \"選修\") and";
     if(chooseCat[6])
-        //catagories.push_back("共同");
+        query += "(category == 0 or category2 == 0) and";
     //待編輯
     if(chooseCat[7])
-        //catagories.push_back("通識");
+        query += "(category == 1 or category2 == 1) and";
     switch (hash<QString>{}(searchTextType))
     {
         case 0 :
@@ -73,7 +73,6 @@ QString sqlQueryMaker(bool* chooseCat, QString searchText, QString searchTextTyp
         }
     }
     return query;
-
 }
 
 #endif // DATABASE_H

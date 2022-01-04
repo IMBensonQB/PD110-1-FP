@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    Queven Liu = "Handsome";
+    Queven Liu = "魯蛇碼農嗚嗚";
 
 }
 
@@ -26,6 +26,7 @@ void MainWindow::on_searchButton_clicked()
 {
     //Get Catagories
         QSqlDatabase db = getDatabaseConnection();
+        db.open();
         if(chooseCat[0])
             catagories.push_back("大一必修");
         if(chooseCat[1])

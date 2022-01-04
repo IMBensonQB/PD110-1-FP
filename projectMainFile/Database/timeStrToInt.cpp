@@ -7,7 +7,7 @@ const int MAX_TIME_LEN = 20;
 
 int chinNumToInt(string chin)
 {
-	string dict[11] ={ "¹s" ,"¤@","¤G","¤T","¥|","¤­","¤»","¤C", "¤K", "¤E", "¤Q" };
+	string dict[11] ={ "é›¶" ,"ä¸€","äºŒ","ä¸‰","å››","äº”","å…­","ä¸ƒ", "å…«", "ä¹", "å" };
 	for (int i = 0; i < 11; i++)
 	{
 		if (chin == dict[i])
@@ -68,7 +68,7 @@ int* timeStrToIntArr(string timeStr)
 		{
 			continue;
 		}
-		else //æ¼¢å?
+		else //æ¼¢ï¿½?
 		{
 			currentDay = chinNumToInt(timeStr.substr(i, 2));
 			i++;
@@ -78,10 +78,13 @@ int* timeStrToIntArr(string timeStr)
 }
 
 
-int main()
+int main(int argc, char* argv[])
 {
-	string str; 
-	cin >> str;
+	string str;
+	for (int i = 1; i < argc; i++)
+	{
+		str += argv[i];
+	}
 	int* arr = timeStrToIntArr(str);
 	for (int i = 0; i < 20; i++)
 		cout << arr[i] << " ";

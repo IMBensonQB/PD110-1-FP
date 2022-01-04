@@ -42,7 +42,7 @@ void MainWindow::on_searchButton_clicked()
             catagories.push_back("共同");
         if(chooseCat[7])
             catagories.push_back("通識");
-
+        //可以不用catagories,  我用chooseCat就好
         for(int i = 0; i < catagories.size(); i++)
         {
             qDebug() << catagories[i];
@@ -73,7 +73,7 @@ void MainWindow::on_searchButton_clicked()
 
     //Show the table
 
-        QString query = sqlQueryMaker(chooseCat, searchText, searchTextType, timeVec, catagories);
+        QString query = sqlQueryMaker(chooseCat, searchText, searchTextType, timeVec);
         QSqlQueryModel *model;
         model = new QSqlQueryModel(this);
         model->setQuery(query);

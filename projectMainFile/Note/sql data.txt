@@ -37,10 +37,10 @@ dpt_code int,
 dptname varchar(15),
 cou_code varchar(15),
 class int, /*班次*/
-year int, /*年級*/
+year varchar(20), /*年級*/
 credit int,
-forh bool, /*半年 0 or全年 1*/
-sel_code int, /*必帶 0 , 必修 1 選修 2*/
+forh varchar(10), /*半年  or全年 /
+sel_code varchar(10), /*必帶 , 必修 選修 */
 cou_cname varchar(50),
 cou_ename varchar(100),
 tea_cname varchar(20),

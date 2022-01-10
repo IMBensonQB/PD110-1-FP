@@ -24,6 +24,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_searchButton_clicked()
 {
+
     //Get Catagories
         QSqlDatabase db = getDatabaseConnection();
         db.open();
@@ -92,6 +93,11 @@ void MainWindow::on_searchButton_clicked()
         model->setHeaderData(9, Qt::Horizontal, tr("全半年"));
         model->setHeaderData(10, Qt::Horizontal, tr("加選方式"));
         ui->tableView->setModel(model);
+
+        ui->tableView->resizeColumnsToContents();
+
+
+      timeVec.clear();
 
 }
 

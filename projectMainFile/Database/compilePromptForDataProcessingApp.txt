@@ -1,0 +1,1 @@
+g++ timeStrToInt.cpp -fexec-charset=big5 -finput-charset=utf-8

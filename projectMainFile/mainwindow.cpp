@@ -85,8 +85,8 @@ void MainWindow::on_searchButton_clicked()
         uquery.exec(sqlQueryMaker(chooseCat, searchText, searchTextType, timeVec));
         timeVec.clear();
         model->setQuery(QSqlQuery(uquery.lastQuery()));
-        //qDebug()<<uquery.lastQuery();
-        model->setHeaderData(0, Qt::Horizontal, tr("課程識別碼"));
+        qDebug()<<uquery.lastQuery();
+        model->setHeaderData(0, Qt::Horizontal, tr("流水號"));
         model->setHeaderData(1, Qt::Horizontal, tr("科系"));
         model->setHeaderData(2, Qt::Horizontal, tr("必選修"));
         model->setHeaderData(3, Qt::Horizontal, tr("班次"));

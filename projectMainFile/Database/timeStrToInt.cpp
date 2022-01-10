@@ -20,11 +20,11 @@ int cusStoi(string str)
 {
 	if (isalpha(str.at(0)))
 	{
-		char dict[4] = { 'A', 'B', 'C', 'D' };
-		for (int i = 0; i < 4; i++)
+		char dict[5] = {'X', 'A', 'B', 'C', 'D' };
+		for (int i = 0; i < 5; i++)
 		{
 			if (str.at(0) == dict[i])
-				return i + 11;
+				return i + 10;
 		}
 	}
 	else return stoi(str);
@@ -38,7 +38,7 @@ bool cusisDigit(char a)
 			return false;
 		if (isdigit(a))
 			return true;
-		else if (a == 'A' or a == 'B' or a == 'C' or a == 'D')
+		else if (a == 'A' or a == 'B' or a == 'C' or a == 'D' or a == 'X')
 			return true;
 		return false;
 	}

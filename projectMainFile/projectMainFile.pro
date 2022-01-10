@@ -26,3 +26,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     /Users/bensonchiu/allData/PD110-1-FP/projectMainFile/Database/course.db
+    C:\\Users\\user\\Documents\\GitHub\\PD110-1-FP\\projectMainFile\\Database\\course.db

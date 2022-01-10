@@ -12,6 +12,7 @@
 #include <functional>
 #include <QSqlQuery>
 #include <QSysInfo>
+#include <QRegularExpression>
 using namespace std;
 
 
@@ -57,7 +58,7 @@ QString sqlQueryMaker(bool* chooseCat, QString searchText, QString searchTextTyp
         for (int j = 0; j < 16; j++)
             timeNegVec.push_back(i*100+j);
     }
-    QString query = "select cou_code, dptname, sel_code,class, cou_cname, tea_cname, daytime, clsrom_1, credit, forh, co_select from course where cou_cname is not null and (";
+    QString query = "select ser_no, dptname, sel_code,class, cou_cname, tea_cname, daytime, clsrom_1, credit, forh, co_select from course where cou_cname is not null and (";
     if(chooseCat[0])
         query += "((year == '1年級') and (sel_code == '必修' and dptname == '資管系')) or ";
     if(chooseCat[1])
@@ -75,9 +76,17 @@ QString sqlQueryMaker(bool* chooseCat, QString searchText, QString searchTextTyp
     if(chooseCat[7])
         query += "(category == 1 or category2 == 1) or ";
     query += "cou_cname = '愛情特訓班')";
+
     if (searchTextType == "課程名稱")
     {
-        query += " and cou_cname like '%" + searchText + "%'";
+        query += " and (";
+        QStringList list;
+        list = searchText.split(QRegularExpression("\\s+"));
+        foreach(QString item, list)
+        {
+            query += "cou_cname like '%" + item + "%' or ";
+        }
+        query += " cou_cname = '黑魔法概論')";
     }
     if (searchTextType == "教師姓名")
     {

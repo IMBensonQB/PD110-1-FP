@@ -6,6 +6,7 @@
 #include <QVector>
 #include <QString>
 #include <QMessageBox>
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -23,11 +24,16 @@ MainWindow::~MainWindow()
 }
 
 
+myTableModel* model = new myTableModel;
+
+
 
 void MainWindow::on_searchButton_clicked()
 {
 
     //Get Catagories
+        delete model;
+        model = new myTableModel;
         QSqlDatabase db = getDatabaseConnection();
         db.open();
         if(chooseCat[0])
@@ -49,7 +55,7 @@ void MainWindow::on_searchButton_clicked()
         //可以不用catagories,  我用chooseCat就好
         for(int i = 0; i < catagories.size(); i++)
         {
-            qDebug() << catagories[i];
+            //qDebug() << catagories[i];
         }
 
    //Get timetable
@@ -67,13 +73,14 @@ void MainWindow::on_searchButton_clicked()
 
         for(int i = 0; i < timeVec.size(); i++)
         {
-            qDebug() << timeVec[i];
+            //qDebug() << timeVec[i];
         }
 
     //Get inquiry
         QString searchTextType = ui -> comboBox -> currentText();
         QString searchText = ui -> courseLineEdit -> text();
-        qDebug() << searchTextType << " " << searchText;
+        //qDebug() << searchTextType << " " << searchText;
+
 
        if(catagories.isEmpty() or timeVec.isEmpty())
        {
@@ -107,8 +114,6 @@ void MainWindow::on_searchButton_clicked()
            timeVec.clear();
 
        }
-
-
 
 }
 

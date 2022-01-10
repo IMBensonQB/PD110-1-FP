@@ -8,11 +8,33 @@
 #include <QStandardItemModel>
 #include <QStandardItem>
 #include <QApplication>
+#include <QSqlTableModel>
 #include <functional>
+#include <QSqlQuery>
+#include <QSysInfo>
 using namespace std;
-const QString path = "/Users/bensonchiu/allData/PD110-1-FP/projectMainFile/Database/course.db";
+
+
+
+QString path = "C:\\Users\\user\\Documents\\GitHub\\PD110-1-FP\\projectMainFile\\Database\\course.db";
+
+
+class myTableModel : public QSqlTableModel
+{
+protected:
+public:
+    void setQuery(const QSqlQuery &query)
+    {
+        QSqlTableModel::setQuery(query);
+    }
+
+};
+
+
 QSqlDatabase getDatabaseConnection()
 {
+    if (QSysInfo::productType() == "osx")
+        path = "/Users/bensonchiu/allData/PD110-1-FP/projectMainFile/Database/course.db";
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     qDebug() << path;
     db.setDatabaseName(path);
@@ -37,13 +59,13 @@ QString sqlQueryMaker(bool* chooseCat, QString searchText, QString searchTextTyp
     }
     QString query = "select cou_code, dptname, sel_code,class, cou_cname, tea_cname, daytime, clsrom_1, credit, forh, co_select from course where cou_cname is not null and (";
     if(chooseCat[0])
-        query += "((year == '1年級') and (sel_code == '必修')) or ";
+        query += "((year == '1年級') and (sel_code == '必修' and dptname == '資管系')) or ";
     if(chooseCat[1])
-        query += "((year == '2年級') and (sel_code == '必修')) or ";
+        query += "((year == '2年級') and (sel_code == '必修' and dptname == '資管系')) or ";
     if(chooseCat[2])
-        query += "((year == '3年級') and (sel_code == '必修')) or ";
+        query += "((year == '3年級') and (sel_code == '必修' and dptname == '資管系')) or ";
     if(chooseCat[3])
-        query += "((year == '4年級') and (sel_code == '必修')) or ";
+        query += "((year == '4年級') and (sel_code == '必修' and dptname == '資管系')) or ";
     if(chooseCat[4])
         query += "((sel_code == '選修') and (dptname == '資管系')) or ";
     if(chooseCat[5])
@@ -51,7 +73,7 @@ QString sqlQueryMaker(bool* chooseCat, QString searchText, QString searchTextTyp
     if(chooseCat[6])
         query += "(category == 0) or ";
     if(chooseCat[7])
-        query += "or (category == 1 or category2 == 1) or ";
+        query += "(category == 1 or category2 == 1) or ";
     query += "cou_cname = '愛情特訓班')";
     if (searchTextType == "課程名稱")
     {
@@ -76,7 +98,7 @@ QString sqlQueryMaker(bool* chooseCat, QString searchText, QString searchTextTyp
             //over 10 will result in error
         }
     }
-    query += "cou_cname is not null;";
+    query += "cou_cname is not null and time0 != 0;";
     return query;
 }
 

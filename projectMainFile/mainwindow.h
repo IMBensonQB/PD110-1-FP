@@ -127,6 +127,18 @@ private slots:
 
     void on_searchButton_clicked();
 
+    void on_chooseAll_1_stateChanged(int arg1);
+
+    void on_chooseAll_2_stateChanged(int arg1);
+
+    void on_chooseAll_3_stateChanged(int arg1);
+
+    void on_chooseAll_4_stateChanged(int arg1);
+
+    void on_chooseAll_5_stateChanged(int arg1);
+
+    void on_chooseAll_6_stateChanged(int arg1);
+
 private:
     Ui::MainWindow *ui;
 

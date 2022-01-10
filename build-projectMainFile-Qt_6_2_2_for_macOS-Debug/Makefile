@@ -636,6 +636,33 @@ mainwindow.o: ../projectMainFile/mainwindow.cpp ../projectMainFile/mainwindow.h 
 		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qcheckbox.h \
 		../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QString \
 		../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qstring.h \
+		../projectMainFile/database.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QtSql \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qtsqlglobal.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqldatabase.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqldriver.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqldriverplugin.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlerror.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlfield.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlindex.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlquery.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlquerymodel.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlrecord.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlrelationaldelegate.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlrelationaltablemodel.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqlresult.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qsqltablemodel.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/qtsqlversion.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QSqlDatabase \
+		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QMessageBox \
+		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qmessagebox.h \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QSqlQuery \
+		../../../Qt/6.2.2/macos/lib/QtSql.framework/Headers/QSqlQueryModel \
+		../../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/QStandardItemModel \
+		../../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/qstandarditemmodel.h \
+		../../../Qt/6.2.2/macos/lib/QtGui.framework/Headers/QStandardItem \
+		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/QApplication \
+		../../../Qt/6.2.2/macos/lib/QtWidgets.framework/Headers/qapplication.h \
 		ui_mainwindow.h \
 		../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/QDebug \
 		../../../Qt/6.2.2/macos/lib/QtCore.framework/Headers/qdebug.h

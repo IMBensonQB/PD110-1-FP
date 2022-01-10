@@ -10,7 +10,7 @@
 #include <QApplication>
 #include <functional>
 using namespace std;
-const QString path = "C:\\Users\\user\\Documents\\GitHub\\PD110-1-FP\\projectMainFile\\Database\\course.db";
+const QString path = "/Users/bensonchiu/allData/PD110-1-FP/projectMainFile/Database/course.db";
 QSqlDatabase getDatabaseConnection()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");

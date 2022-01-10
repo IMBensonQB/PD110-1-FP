@@ -11,7 +11,10 @@
 #include <QSqlTableModel>
 #include <functional>
 #include <QSqlQuery>
+#include <QSysInfo>
 using namespace std;
+
+
 const QString path = "C:\\Users\\user\\Documents\\GitHub\\PD110-1-FP\\projectMainFile\\Database\\course.db";
 
 

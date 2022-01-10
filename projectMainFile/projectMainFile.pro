@@ -25,4 +25,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    Database/course.db
+    /Users/bensonchiu/allData/PD110-1-FP/projectMainFile/Database/course.db

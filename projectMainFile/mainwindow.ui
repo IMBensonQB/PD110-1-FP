@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>979</width>
+    <width>1235</width>
     <height>600</height>
    </rect>
   </property>
@@ -19,7 +19,7 @@
      <rect>
       <x>150</x>
       <y>0</y>
-      <width>551</width>
+      <width>501</width>
       <height>75</height>
      </rect>
     </property>
@@ -193,22 +193,22 @@
      <rect>
       <x>160</x>
       <y>100</y>
-      <width>541</width>
-      <height>331</height>
+      <width>791</width>
+      <height>451</height>
      </rect>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
-      <x>740</x>
-      <y>30</y>
-      <width>221</width>
+      <x>970</x>
+      <y>11</y>
+      <width>241</width>
       <height>511</height>
      </rect>
     </property>
     <property name="title">
-     <string>Timetable</string>
+     <string>時間表</string>
     </property>
     <widget class="QLabel" name="label">
      <property name="geometry">
@@ -1693,19 +1693,187 @@
      </property>
     </widget>
    </widget>
+   <widget class="QGroupBox" name="groupBox_4">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>10</y>
+      <width>301</width>
+      <height>65</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>全選設定</string>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QCheckBox" name="chooseAll_1">
+       <property name="text">
+        <string>一</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="chooseAll_2">
+       <property name="text">
+        <string>二</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="chooseAll_3">
+       <property name="text">
+        <string>三</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="chooseAll_4">
+       <property name="text">
+        <string>四</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="chooseAll_5">
+       <property name="text">
+        <string>五</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="chooseAll_6">
+       <property name="text">
+        <string>六</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>979</width>
-     <height>24</height>
+     <width>1235</width>
+     <height>22</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <tabstops>
+  <tabstop>courseLineEdit</tabstop>
+  <tabstop>searchButton</tabstop>
+  <tabstop>comboBox</tabstop>
+  <tabstop>checkBox_0</tabstop>
+  <tabstop>checkBox_01</tabstop>
+  <tabstop>checkBox_02</tabstop>
+  <tabstop>checkBox_03</tabstop>
+  <tabstop>checkBox_04</tabstop>
+  <tabstop>checkBox_2</tabstop>
+  <tabstop>checkBox_3</tabstop>
+  <tabstop>checkBox_4</tabstop>
+  <tabstop>checkBox_5</tabstop>
+  <tabstop>tableView</tabstop>
+  <tabstop>tt1_0</tabstop>
+  <tabstop>tt2_0</tabstop>
+  <tabstop>tt3_0</tabstop>
+  <tabstop>tt4_0</tabstop>
+  <tabstop>tt5_0</tabstop>
+  <tabstop>tt2_1</tabstop>
+  <tabstop>tt4_1</tabstop>
+  <tabstop>tt1_1</tabstop>
+  <tabstop>tt5_1</tabstop>
+  <tabstop>tt3_1</tabstop>
+  <tabstop>tt1_2</tabstop>
+  <tabstop>tt3_2</tabstop>
+  <tabstop>tt5_2</tabstop>
+  <tabstop>tt2_2</tabstop>
+  <tabstop>tt4_2</tabstop>
+  <tabstop>tt1_3</tabstop>
+  <tabstop>tt3_3</tabstop>
+  <tabstop>tt4_3</tabstop>
+  <tabstop>tt5_3</tabstop>
+  <tabstop>tt2_3</tabstop>
+  <tabstop>tt3_4</tabstop>
+  <tabstop>tt4_4</tabstop>
+  <tabstop>tt1_4</tabstop>
+  <tabstop>tt5_4</tabstop>
+  <tabstop>tt2_4</tabstop>
+  <tabstop>tt3_5</tabstop>
+  <tabstop>tt5_5</tabstop>
+  <tabstop>tt4_5</tabstop>
+  <tabstop>tt1_5</tabstop>
+  <tabstop>tt2_5</tabstop>
+  <tabstop>tt5_6</tabstop>
+  <tabstop>tt3_6</tabstop>
+  <tabstop>tt2_6</tabstop>
+  <tabstop>tt4_6</tabstop>
+  <tabstop>tt1_6</tabstop>
+  <tabstop>tt5_7</tabstop>
+  <tabstop>tt2_7</tabstop>
+  <tabstop>tt3_7</tabstop>
+  <tabstop>tt1_7</tabstop>
+  <tabstop>tt4_7</tabstop>
+  <tabstop>tt5_8</tabstop>
+  <tabstop>tt1_8</tabstop>
+  <tabstop>tt4_8</tabstop>
+  <tabstop>tt2_8</tabstop>
+  <tabstop>tt3_8</tabstop>
+  <tabstop>tt3_9</tabstop>
+  <tabstop>tt4_9</tabstop>
+  <tabstop>tt1_9</tabstop>
+  <tabstop>tt2_9</tabstop>
+  <tabstop>tt5_9</tabstop>
+  <tabstop>tt4_10</tabstop>
+  <tabstop>tt2_10</tabstop>
+  <tabstop>tt1_10</tabstop>
+  <tabstop>tt5_10</tabstop>
+  <tabstop>tt3_10</tabstop>
+  <tabstop>tt4_11</tabstop>
+  <tabstop>tt2_11</tabstop>
+  <tabstop>tt5_11</tabstop>
+  <tabstop>tt1_11</tabstop>
+  <tabstop>tt3_11</tabstop>
+  <tabstop>tt3_12</tabstop>
+  <tabstop>tt1_12</tabstop>
+  <tabstop>tt5_12</tabstop>
+  <tabstop>tt4_12</tabstop>
+  <tabstop>tt2_12</tabstop>
+  <tabstop>tt2_13</tabstop>
+  <tabstop>tt5_13</tabstop>
+  <tabstop>tt4_13</tabstop>
+  <tabstop>tt1_13</tabstop>
+  <tabstop>tt3_13</tabstop>
+  <tabstop>tt3_14</tabstop>
+  <tabstop>tt5_14</tabstop>
+  <tabstop>tt2_14</tabstop>
+  <tabstop>tt4_14</tabstop>
+  <tabstop>tt1_14</tabstop>
+  <tabstop>tt6_5</tabstop>
+  <tabstop>tt6_6</tabstop>
+  <tabstop>tt6_4</tabstop>
+  <tabstop>tt6_0</tabstop>
+  <tabstop>tt6_13</tabstop>
+  <tabstop>tt6_14</tabstop>
+  <tabstop>tt6_3</tabstop>
+  <tabstop>tt6_8</tabstop>
+  <tabstop>tt6_7</tabstop>
+  <tabstop>tt6_1</tabstop>
+  <tabstop>tt6_12</tabstop>
+  <tabstop>tt6_11</tabstop>
+  <tabstop>tt6_10</tabstop>
+  <tabstop>tt6_2</tabstop>
+  <tabstop>tt6_9</tabstop>
+  <tabstop>chooseAll_1</tabstop>
+  <tabstop>chooseAll_2</tabstop>
+  <tabstop>chooseAll_3</tabstop>
+  <tabstop>chooseAll_4</tabstop>
+  <tabstop>chooseAll_5</tabstop>
+  <tabstop>chooseAll_6</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

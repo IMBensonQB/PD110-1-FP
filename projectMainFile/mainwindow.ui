@@ -10,17 +10,35 @@
     <height>600</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1235</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1235</width>
+    <height>600</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Course Selection System Beta 01</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
       <x>150</x>
-      <y>0</y>
+      <y>10</y>
       <width>501</width>
-      <height>75</height>
+      <height>81</height>
      </rect>
     </property>
     <property name="title">
@@ -63,8 +81,8 @@
      <rect>
       <x>20</x>
       <y>80</y>
-      <width>120</width>
-      <height>351</height>
+      <width>115</width>
+      <height>350</height>
      </rect>
     </property>
     <property name="title">
@@ -1699,7 +1717,7 @@
       <x>660</x>
       <y>10</y>
       <width>301</width>
-      <height>65</height>
+      <height>81</height>
      </rect>
     </property>
     <property name="title">
@@ -1757,7 +1775,7 @@
      <x>0</x>
      <y>0</y>
      <width>1235</width>
-     <height>22</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>

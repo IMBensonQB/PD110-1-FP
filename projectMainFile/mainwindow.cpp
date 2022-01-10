@@ -5,14 +5,14 @@
 #include <QCheckBox>
 #include <QVector>
 #include <QString>
-
-
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
 
     Queven Liu = "魯蛇碼農嗚嗚";
 
@@ -30,6 +30,7 @@ myTableModel* model = new myTableModel;
 
 void MainWindow::on_searchButton_clicked()
 {
+
     //Get Catagories
         delete model;
         model = new myTableModel;
@@ -81,6 +82,11 @@ void MainWindow::on_searchButton_clicked()
         //qDebug() << searchTextType << " " << searchText;
 
     //Show the table
+      if(catagories.isEmpty() or timeVec.isEmpty())
+      {
+          int ret = QMessageBox::critical(this,"資料不全", "請勾選時間及課程分類",
+                                                QMessageBox::Ok);
+      }
         QSqlQuery uquery;
         uquery.exec(sqlQueryMaker(chooseCat, searchText, searchTextType, timeVec));
         timeVec.clear();
@@ -1114,11 +1120,3 @@ void MainWindow::on_tt6_14_stateChanged(int arg1)
     else
          timeTableChecked[6][14]=false;
 }
-
-
-
-
-
-
-
-

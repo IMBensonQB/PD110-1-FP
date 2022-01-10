@@ -5,6 +5,9 @@
 #include <QCheckBox>
 #include <QVector>
 #include <QString>
+
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -21,10 +24,15 @@ MainWindow::~MainWindow()
 }
 
 
+myTableModel* model = new myTableModel;
+
+
 
 void MainWindow::on_searchButton_clicked()
 {
     //Get Catagories
+        delete model;
+        model = new myTableModel;
         QSqlDatabase db = getDatabaseConnection();
         db.open();
         if(chooseCat[0])
@@ -46,7 +54,7 @@ void MainWindow::on_searchButton_clicked()
         //可以不用catagories,  我用chooseCat就好
         for(int i = 0; i < catagories.size(); i++)
         {
-            qDebug() << catagories[i];
+            //qDebug() << catagories[i];
         }
 
    //Get timetable
@@ -64,22 +72,20 @@ void MainWindow::on_searchButton_clicked()
 
         for(int i = 0; i < timeVec.size(); i++)
         {
-            qDebug() << timeVec[i];
+            //qDebug() << timeVec[i];
         }
 
     //Get inquiry
         QString searchTextType = ui -> comboBox -> currentText();
         QString searchText = ui -> courseLineEdit -> text();
-        qDebug() << searchTextType << " " << searchText;
+        //qDebug() << searchTextType << " " << searchText;
 
     //Show the table
-
-        QString query = sqlQueryMaker(chooseCat, searchText, searchTextType, timeVec);
-        qDebug() << query;
-
-        QSqlQueryModel *model;
-        model = new QSqlQueryModel(this);
-        model->setQuery(query);
+        QSqlQuery uquery;
+        uquery.exec(sqlQueryMaker(chooseCat, searchText, searchTextType, timeVec));
+        timeVec.clear();
+        model->setQuery(QSqlQuery(uquery.lastQuery()));
+        //qDebug()<<uquery.lastQuery();
         model->setHeaderData(0, Qt::Horizontal, tr("課程識別碼"));
         model->setHeaderData(1, Qt::Horizontal, tr("科系"));
         model->setHeaderData(2, Qt::Horizontal, tr("必選修"));
@@ -92,7 +98,10 @@ void MainWindow::on_searchButton_clicked()
         model->setHeaderData(9, Qt::Horizontal, tr("全半年"));
         model->setHeaderData(10, Qt::Horizontal, tr("加選方式"));
         ui->tableView->setModel(model);
-
+        db.close();
+        db.removeDatabase(path);
+        uquery.clear();
+        return;
 }
 
 

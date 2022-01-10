@@ -104,7 +104,251 @@ void MainWindow::on_searchButton_clicked()
         return;
 }
 
+void MainWindow::on_chooseAll_1_stateChanged(int arg1)
+{
+    if(ui-> chooseAll_1 -> isChecked())
+    {
+        ui -> tt1_0 -> setChecked(1);
+        ui -> tt1_1 -> setChecked(1);
+        ui -> tt1_2 -> setChecked(1);
+        ui -> tt1_3 -> setChecked(1);
+        ui -> tt1_4 -> setChecked(1);
+        ui -> tt1_5 -> setChecked(1);
+        ui -> tt1_6 -> setChecked(1);
+        ui -> tt1_7 -> setChecked(1);
+        ui -> tt1_8 -> setChecked(1);
+        ui -> tt1_9 -> setChecked(1);
+        ui -> tt1_10 -> setChecked(1);
+        ui -> tt1_11 -> setChecked(1);
+        ui -> tt1_12 -> setChecked(1);
+        ui -> tt1_13 -> setChecked(1);
+        ui -> tt1_14 -> setChecked(1);
+    }
+    else
+    {
+        ui -> tt1_0 -> setChecked(0);
+        ui -> tt1_1 -> setChecked(0);
+        ui -> tt1_2 -> setChecked(0);
+        ui -> tt1_3 -> setChecked(0);
+        ui -> tt1_4 -> setChecked(0);
+        ui -> tt1_5 -> setChecked(0);
+        ui -> tt1_6 -> setChecked(0);
+        ui -> tt1_7 -> setChecked(0);
+        ui -> tt1_8 -> setChecked(0);
+        ui -> tt1_9 -> setChecked(0);
+        ui -> tt1_10 -> setChecked(0);
+        ui -> tt1_11 -> setChecked(0);
+        ui -> tt1_12 -> setChecked(0);
+        ui -> tt1_13 -> setChecked(0);
+        ui -> tt1_14 -> setChecked(0);
+    }
+}
 
+void MainWindow::on_chooseAll_2_stateChanged(int arg1)
+{
+    if(ui-> chooseAll_2 -> isChecked())
+    {
+        ui -> tt2_0 -> setChecked(1);
+        ui -> tt2_1 -> setChecked(1);
+        ui -> tt2_2 -> setChecked(1);
+        ui -> tt2_3 -> setChecked(1);
+        ui -> tt2_4 -> setChecked(1);
+        ui -> tt2_5 -> setChecked(1);
+        ui -> tt2_6 -> setChecked(1);
+        ui -> tt2_7 -> setChecked(1);
+        ui -> tt2_8 -> setChecked(1);
+        ui -> tt2_9 -> setChecked(1);
+        ui -> tt2_10 -> setChecked(1);
+        ui -> tt2_11 -> setChecked(1);
+        ui -> tt2_12 -> setChecked(1);
+        ui -> tt2_13 -> setChecked(1);
+        ui -> tt2_14 -> setChecked(1);
+    }
+    else
+    {
+        ui -> tt2_0 -> setChecked(0);
+        ui -> tt2_1 -> setChecked(0);
+        ui -> tt2_2 -> setChecked(0);
+        ui -> tt2_3 -> setChecked(0);
+        ui -> tt2_4 -> setChecked(0);
+        ui -> tt2_5 -> setChecked(0);
+        ui -> tt2_6 -> setChecked(0);
+        ui -> tt2_7 -> setChecked(0);
+        ui -> tt2_8 -> setChecked(0);
+        ui -> tt2_9 -> setChecked(0);
+        ui -> tt2_10 -> setChecked(0);
+        ui -> tt2_11 -> setChecked(0);
+        ui -> tt2_12 -> setChecked(0);
+        ui -> tt2_13 -> setChecked(0);
+        ui -> tt2_14 -> setChecked(0);
+    }
+
+}
+
+
+void MainWindow::on_chooseAll_3_stateChanged(int arg1)
+{
+    if(ui-> chooseAll_3 -> isChecked())
+    {
+        ui -> tt3_0 -> setChecked(1);
+        ui -> tt3_1 -> setChecked(1);
+        ui -> tt3_2 -> setChecked(1);
+        ui -> tt3_3 -> setChecked(1);
+        ui -> tt3_4 -> setChecked(1);
+        ui -> tt3_5 -> setChecked(1);
+        ui -> tt3_6 -> setChecked(1);
+        ui -> tt3_7 -> setChecked(1);
+        ui -> tt3_8 -> setChecked(1);
+        ui -> tt3_9 -> setChecked(1);
+        ui -> tt3_10 -> setChecked(1);
+        ui -> tt3_11 -> setChecked(1);
+        ui -> tt3_12 -> setChecked(1);
+        ui -> tt3_13 -> setChecked(1);
+        ui -> tt3_14 -> setChecked(1);
+    }
+    else
+    {
+        ui -> tt3_0 -> setChecked(0);
+        ui -> tt3_1 -> setChecked(0);
+        ui -> tt3_2 -> setChecked(0);
+        ui -> tt3_3 -> setChecked(0);
+        ui -> tt3_4 -> setChecked(0);
+        ui -> tt3_5 -> setChecked(0);
+        ui -> tt3_6 -> setChecked(0);
+        ui -> tt3_7 -> setChecked(0);
+        ui -> tt3_8 -> setChecked(0);
+        ui -> tt3_9 -> setChecked(0);
+        ui -> tt3_10 -> setChecked(0);
+        ui -> tt3_11 -> setChecked(0);
+        ui -> tt3_12 -> setChecked(0);
+        ui -> tt3_13 -> setChecked(0);
+        ui -> tt3_14 -> setChecked(0);
+    }
+
+}
+
+void MainWindow::on_chooseAll_4_stateChanged(int arg1)
+{
+    if(ui-> chooseAll_4 -> isChecked())
+    {
+        ui -> tt4_0 -> setChecked(1);
+        ui -> tt4_1 -> setChecked(1);
+        ui -> tt4_2 -> setChecked(1);
+        ui -> tt4_3 -> setChecked(1);
+        ui -> tt4_4 -> setChecked(1);
+        ui -> tt4_5 -> setChecked(1);
+        ui -> tt4_6 -> setChecked(1);
+        ui -> tt4_7 -> setChecked(1);
+        ui -> tt4_8 -> setChecked(1);
+        ui -> tt4_9 -> setChecked(1);
+        ui -> tt4_10 -> setChecked(1);
+        ui -> tt4_11 -> setChecked(1);
+        ui -> tt4_12 -> setChecked(1);
+        ui -> tt4_13 -> setChecked(1);
+        ui -> tt4_14 -> setChecked(1);
+    }
+    else
+    {
+        ui -> tt4_0 -> setChecked(0);
+        ui -> tt4_1 -> setChecked(0);
+        ui -> tt4_2 -> setChecked(0);
+        ui -> tt4_3 -> setChecked(0);
+        ui -> tt4_4 -> setChecked(0);
+        ui -> tt4_5 -> setChecked(0);
+        ui -> tt4_6 -> setChecked(0);
+        ui -> tt4_7 -> setChecked(0);
+        ui -> tt4_8 -> setChecked(0);
+        ui -> tt4_9 -> setChecked(0);
+        ui -> tt4_10 -> setChecked(0);
+        ui -> tt4_11 -> setChecked(0);
+        ui -> tt4_12 -> setChecked(0);
+        ui -> tt4_13 -> setChecked(0);
+        ui -> tt4_14 -> setChecked(0);
+    }
+
+}
+
+void MainWindow::on_chooseAll_5_stateChanged(int arg1)
+{
+    if(ui-> chooseAll_5 -> isChecked())
+    {
+        ui -> tt5_0 -> setChecked(1);
+        ui -> tt5_1 -> setChecked(1);
+        ui -> tt5_2 -> setChecked(1);
+        ui -> tt5_3 -> setChecked(1);
+        ui -> tt5_4 -> setChecked(1);
+        ui -> tt5_5 -> setChecked(1);
+        ui -> tt5_6 -> setChecked(1);
+        ui -> tt5_7 -> setChecked(1);
+        ui -> tt5_8 -> setChecked(1);
+        ui -> tt5_9 -> setChecked(1);
+        ui -> tt5_10 -> setChecked(1);
+        ui -> tt5_11 -> setChecked(1);
+        ui -> tt5_12 -> setChecked(1);
+        ui -> tt5_13 -> setChecked(1);
+        ui -> tt5_14 -> setChecked(1);
+    }
+    else
+    {
+        ui -> tt5_0 -> setChecked(0);
+        ui -> tt5_1 -> setChecked(0);
+        ui -> tt5_2 -> setChecked(0);
+        ui -> tt5_3 -> setChecked(0);
+        ui -> tt5_4 -> setChecked(0);
+        ui -> tt5_5 -> setChecked(0);
+        ui -> tt5_6 -> setChecked(0);
+        ui -> tt5_7 -> setChecked(0);
+        ui -> tt5_8 -> setChecked(0);
+        ui -> tt5_9 -> setChecked(0);
+        ui -> tt5_10 -> setChecked(0);
+        ui -> tt5_11 -> setChecked(0);
+        ui -> tt5_12 -> setChecked(0);
+        ui -> tt5_13 -> setChecked(0);
+        ui -> tt5_14 -> setChecked(0);
+    }
+
+}
+
+void MainWindow::on_chooseAll_6_stateChanged(int arg1)
+{
+    if(ui-> chooseAll_6 -> isChecked())
+    {
+        ui -> tt6_0 -> setChecked(1);
+        ui -> tt6_1 -> setChecked(1);
+        ui -> tt6_2 -> setChecked(1);
+        ui -> tt6_3 -> setChecked(1);
+        ui -> tt6_4 -> setChecked(1);
+        ui -> tt6_5 -> setChecked(1);
+        ui -> tt6_6 -> setChecked(1);
+        ui -> tt6_7 -> setChecked(1);
+        ui -> tt6_8 -> setChecked(1);
+        ui -> tt6_9 -> setChecked(1);
+        ui -> tt6_10 -> setChecked(1);
+        ui -> tt6_11 -> setChecked(1);
+        ui -> tt6_12 -> setChecked(1);
+        ui -> tt6_13 -> setChecked(1);
+        ui -> tt6_14 -> setChecked(1);
+    }
+    else
+    {
+        ui -> tt6_0 -> setChecked(0);
+        ui -> tt6_1 -> setChecked(0);
+        ui -> tt6_2 -> setChecked(0);
+        ui -> tt6_3 -> setChecked(0);
+        ui -> tt6_4 -> setChecked(0);
+        ui -> tt6_5 -> setChecked(0);
+        ui -> tt6_6 -> setChecked(0);
+        ui -> tt6_7 -> setChecked(0);
+        ui -> tt6_8 -> setChecked(0);
+        ui -> tt6_9 -> setChecked(0);
+        ui -> tt6_10 -> setChecked(0);
+        ui -> tt6_11 -> setChecked(0);
+        ui -> tt6_12 -> setChecked(0);
+        ui -> tt6_13 -> setChecked(0);
+        ui -> tt6_14 -> setChecked(0);
+    }
+
+}
 
 void MainWindow::on_checkBox_0_stateChanged(int arg1)
 {
@@ -870,6 +1114,10 @@ void MainWindow::on_tt6_14_stateChanged(int arg1)
     else
          timeTableChecked[6][14]=false;
 }
+
+
+
+
 
 
 

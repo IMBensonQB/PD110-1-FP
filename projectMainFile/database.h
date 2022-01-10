@@ -15,7 +15,8 @@
 using namespace std;
 
 
-const QString path = "C:\\Users\\user\\Documents\\GitHub\\PD110-1-FP\\projectMainFile\\Database\\course.db";
+
+QString path = "C:\\Users\\user\\Documents\\GitHub\\PD110-1-FP\\projectMainFile\\Database\\course.db";
 
 
 class myTableModel : public QSqlTableModel
@@ -29,8 +30,11 @@ public:
 
 };
 
+
 QSqlDatabase getDatabaseConnection()
 {
+    if (QSysInfo::productType() == "osx")
+        path = "/Users/bensonchiu/allData/PD110-1-FP/projectMainFile/Database/course.db";
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     qDebug() << path;
     db.setDatabaseName(path);

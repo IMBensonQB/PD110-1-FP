@@ -179,6 +179,8 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(1235, 600);
+        MainWindow->setMinimumSize(QSize(1235, 600));
+        MainWindow->setMaximumSize(QSize(1235, 600));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         groupBox = new QGroupBox(centralwidget);
@@ -206,7 +208,7 @@ public:
 
         groupBox_2 = new QGroupBox(centralwidget);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
-        groupBox_2->setGeometry(QRect(20, 80, 120, 351));
+        groupBox_2->setGeometry(QRect(20, 80, 115, 350));
         checkBox_0 = new QCheckBox(groupBox_2);
         checkBox_0->setObjectName(QString::fromUtf8("checkBox_0"));
         checkBox_0->setGeometry(QRect(10, 40, 85, 20));
@@ -626,7 +628,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1235, 22));
+        menubar->setGeometry(QRect(0, 0, 1235, 24));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));

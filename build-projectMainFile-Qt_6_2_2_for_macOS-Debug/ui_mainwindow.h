@@ -179,13 +179,18 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(1235, 600);
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
+        MainWindow->setSizePolicy(sizePolicy);
         MainWindow->setMinimumSize(QSize(1235, 600));
         MainWindow->setMaximumSize(QSize(1235, 600));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(150, 0, 501, 75));
+        groupBox->setGeometry(QRect(150, 10, 501, 81));
         horizontalLayout = new QHBoxLayout(groupBox);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         comboBox = new QComboBox(groupBox);
@@ -592,7 +597,7 @@ public:
         label_21->setGeometry(QRect(190, 30, 21, 16));
         groupBox_4 = new QGroupBox(centralwidget);
         groupBox_4->setObjectName(QString::fromUtf8("groupBox_4"));
-        groupBox_4->setGeometry(QRect(660, 10, 301, 65));
+        groupBox_4->setGeometry(QRect(660, 10, 301, 81));
         horizontalLayout_2 = new QHBoxLayout(groupBox_4);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         chooseAll_1 = new QCheckBox(groupBox_4);
@@ -749,7 +754,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Course Selection System Beta 01", nullptr));
         groupBox->setTitle(QCoreApplication::translate("MainWindow", "\346\220\234\345\260\213\346\254\204", nullptr));
         comboBox->setItemText(0, QCoreApplication::translate("MainWindow", "\350\252\262\347\250\213\345\220\215\347\250\261", nullptr));
         comboBox->setItemText(1, QCoreApplication::translate("MainWindow", "\346\225\231\345\270\253\345\247\223\345\220\215", nullptr));

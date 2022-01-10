@@ -5,11 +5,13 @@
 #include <QCheckBox>
 #include <QVector>
 #include <QString>
+#include <QMessageBox>
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
 
     Queven Liu = "魯蛇碼農嗚嗚";
 
@@ -73,31 +75,40 @@ void MainWindow::on_searchButton_clicked()
         QString searchText = ui -> courseLineEdit -> text();
         qDebug() << searchTextType << " " << searchText;
 
-    //Show the table
+       if(catagories.isEmpty() or timeVec.isEmpty())
+       {
+           int ret = QMessageBox::critical(this,"資料不全", "請勾選時間及課程分類",
+                                                   QMessageBox::Ok);
+       }
+       else //show the table
+       {
+           QString query = sqlQueryMaker(chooseCat, searchText, searchTextType, timeVec);
+           qDebug() << query;
 
-        QString query = sqlQueryMaker(chooseCat, searchText, searchTextType, timeVec);
-        qDebug() << query;
+           QSqlQueryModel *model;
+           model = new QSqlQueryModel(this);
+           model->setQuery(query);
+           model->setHeaderData(0, Qt::Horizontal, tr("課程識別碼"));
+           model->setHeaderData(1, Qt::Horizontal, tr("科系"));
+           model->setHeaderData(2, Qt::Horizontal, tr("必選修"));
+           model->setHeaderData(3, Qt::Horizontal, tr("班次"));
+           model->setHeaderData(4, Qt::Horizontal, tr("課程名稱"));
+           model->setHeaderData(5, Qt::Horizontal, tr("教師"));
+           model->setHeaderData(6, Qt::Horizontal, tr("時間"));
+           model->setHeaderData(7, Qt::Horizontal, tr("教室"));
+           model->setHeaderData(8, Qt::Horizontal, tr("學分"));
+           model->setHeaderData(9, Qt::Horizontal, tr("全半年"));
+           model->setHeaderData(10, Qt::Horizontal, tr("加選方式"));
 
-        QSqlQueryModel *model;
-        model = new QSqlQueryModel(this);
-        model->setQuery(query);
-        model->setHeaderData(0, Qt::Horizontal, tr("課程識別碼"));
-        model->setHeaderData(1, Qt::Horizontal, tr("科系"));
-        model->setHeaderData(2, Qt::Horizontal, tr("必選修"));
-        model->setHeaderData(3, Qt::Horizontal, tr("班次"));
-        model->setHeaderData(4, Qt::Horizontal, tr("課程名稱"));
-        model->setHeaderData(5, Qt::Horizontal, tr("教師"));
-        model->setHeaderData(6, Qt::Horizontal, tr("時間"));
-        model->setHeaderData(7, Qt::Horizontal, tr("教室"));
-        model->setHeaderData(8, Qt::Horizontal, tr("學分"));
-        model->setHeaderData(9, Qt::Horizontal, tr("全半年"));
-        model->setHeaderData(10, Qt::Horizontal, tr("加選方式"));
-        ui->tableView->setModel(model);
-
-        ui->tableView->resizeColumnsToContents();
+           ui->tableView->setModel(model);
+           ui->tableView->resizeColumnsToContents();
 
 
-      timeVec.clear();
+           timeVec.clear();
+
+       }
+
+
 
 }
 

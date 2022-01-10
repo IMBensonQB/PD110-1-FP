@@ -12,10 +12,6 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-
-    Queven Liu = "魯蛇碼農嗚嗚";
-
 }
 
 MainWindow::~MainWindow()
@@ -87,6 +83,8 @@ void MainWindow::on_searchButton_clicked()
           int ret = QMessageBox::critical(this,"資料不全", "請勾選時間及課程分類",
                                                 QMessageBox::Ok);
       }
+        model->setEditStrategy(QSqlTableModel::OnManualSubmit);
+
         QSqlQuery uquery;
         uquery.exec(sqlQueryMaker(chooseCat, searchText, searchTextType, timeVec));
         timeVec.clear();
@@ -103,6 +101,7 @@ void MainWindow::on_searchButton_clicked()
         model->setHeaderData(8, Qt::Horizontal, tr("學分"));
         model->setHeaderData(9, Qt::Horizontal, tr("全半年"));
         model->setHeaderData(10, Qt::Horizontal, tr("加選方式"));
+        ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
         ui->tableView->setModel(model);
         db.close();
         db.removeDatabase(path);

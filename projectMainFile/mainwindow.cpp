@@ -101,9 +101,12 @@ void MainWindow::on_searchButton_clicked()
         model->setHeaderData(8, Qt::Horizontal, tr("學分"));
         model->setHeaderData(9, Qt::Horizontal, tr("全半年"));
         model->setHeaderData(10, Qt::Horizontal, tr("加選方式"));
+        model->setHeaderData(11,Qt::Horizontal, tr("詳細資料"));
+        //QPushButton *button = new QPushButton("Start");
         ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
         ui->tableView->setModel(model);
         ui->tableView->resizeColumnsToContents();
+        //ui->tableView->setIndexWidget(model->index(model->rowCount() - 1, 11), button);
         db.close();
         db.removeDatabase(path);
         uquery.clear();

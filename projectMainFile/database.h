@@ -13,6 +13,7 @@
 #include <QSqlQuery>
 #include <QSysInfo>
 #include <QRegularExpression>
+#include <QApplication>
 using namespace std;
 
 
@@ -34,6 +35,7 @@ public:
 
 QSqlDatabase getDatabaseConnection()
 {
+    path = QApplication::applicationDirPath() + "/course.db";
     if (QSysInfo::productType() == "osx")
         path = "/Users/bensonchiu/allData/PD110-1-FP/projectMainFile/Database/course.db";
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");

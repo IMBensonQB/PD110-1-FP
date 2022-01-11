@@ -54,12 +54,17 @@
        </item>
        <item>
         <property name="text">
+         <string>開課系所</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
          <string>教師姓名</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>課號</string>
+         <string>流水號</string>
         </property>
        </item>
       </widget>
@@ -80,7 +85,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>80</y>
+      <y>100</y>
       <width>115</width>
       <height>350</height>
      </rect>
@@ -220,7 +225,7 @@
     <property name="geometry">
      <rect>
       <x>970</x>
-      <y>11</y>
+      <y>30</y>
       <width>241</width>
       <height>511</height>
      </rect>
@@ -1775,7 +1780,7 @@
      <x>0</x>
      <y>0</y>
      <width>1235</width>
-     <height>24</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

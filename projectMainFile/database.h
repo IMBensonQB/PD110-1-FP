@@ -102,7 +102,15 @@ QString sqlQueryMaker(bool* chooseCat, QString searchText, QString searchTextTyp
     }
     if (searchTextType == "教師姓名")
     {
-        query += " and tea_cname like '%" + searchText + "%'";
+        query += " and tea_cname like '%" + searchText + "%' ";
+    }
+    if (searchTextType == "開課系所")
+    {
+        query += " and dptname like '%" + searchText + "%' ";
+    }
+    if (searchTextType == "流水號")
+    {
+        query += " and ser_no = " + searchText;
     }
     int vecLen = timeVec.size();
     for (int i = 0; i < vecLen; i++)

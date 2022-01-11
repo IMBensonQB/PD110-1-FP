@@ -163,6 +163,14 @@ public:
     QCheckBox *tt6_2;
     QCheckBox *tt6_9;
     QLabel *label_21;
+    QGroupBox *groupBox_4;
+    QHBoxLayout *horizontalLayout_2;
+    QCheckBox *chooseAll_1;
+    QCheckBox *chooseAll_2;
+    QCheckBox *chooseAll_3;
+    QCheckBox *chooseAll_4;
+    QCheckBox *chooseAll_5;
+    QCheckBox *chooseAll_6;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -170,12 +178,19 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(979, 600);
+        MainWindow->resize(1235, 600);
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
+        MainWindow->setSizePolicy(sizePolicy);
+        MainWindow->setMinimumSize(QSize(1235, 600));
+        MainWindow->setMaximumSize(QSize(1235, 600));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(150, 0, 551, 75));
+        groupBox->setGeometry(QRect(150, 10, 501, 81));
         horizontalLayout = new QHBoxLayout(groupBox);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         comboBox = new QComboBox(groupBox);
@@ -198,7 +213,7 @@ public:
 
         groupBox_2 = new QGroupBox(centralwidget);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
-        groupBox_2->setGeometry(QRect(20, 80, 120, 351));
+        groupBox_2->setGeometry(QRect(20, 80, 115, 350));
         checkBox_0 = new QCheckBox(groupBox_2);
         checkBox_0->setObjectName(QString::fromUtf8("checkBox_0"));
         checkBox_0->setGeometry(QRect(10, 40, 85, 20));
@@ -228,10 +243,10 @@ public:
         checkBox_5->setGeometry(QRect(10, 290, 85, 20));
         tableView = new QTableView(centralwidget);
         tableView->setObjectName(QString::fromUtf8("tableView"));
-        tableView->setGeometry(QRect(160, 100, 541, 331));
+        tableView->setGeometry(QRect(160, 100, 791, 451));
         groupBox_3 = new QGroupBox(centralwidget);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
-        groupBox_3->setGeometry(QRect(740, 30, 221, 511));
+        groupBox_3->setGeometry(QRect(970, 11, 241, 511));
         label = new QLabel(groupBox_3);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(40, 30, 21, 16));
@@ -580,14 +595,157 @@ public:
         label_21 = new QLabel(groupBox_3);
         label_21->setObjectName(QString::fromUtf8("label_21"));
         label_21->setGeometry(QRect(190, 30, 21, 16));
+        groupBox_4 = new QGroupBox(centralwidget);
+        groupBox_4->setObjectName(QString::fromUtf8("groupBox_4"));
+        groupBox_4->setGeometry(QRect(660, 10, 301, 81));
+        horizontalLayout_2 = new QHBoxLayout(groupBox_4);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        chooseAll_1 = new QCheckBox(groupBox_4);
+        chooseAll_1->setObjectName(QString::fromUtf8("chooseAll_1"));
+
+        horizontalLayout_2->addWidget(chooseAll_1);
+
+        chooseAll_2 = new QCheckBox(groupBox_4);
+        chooseAll_2->setObjectName(QString::fromUtf8("chooseAll_2"));
+
+        horizontalLayout_2->addWidget(chooseAll_2);
+
+        chooseAll_3 = new QCheckBox(groupBox_4);
+        chooseAll_3->setObjectName(QString::fromUtf8("chooseAll_3"));
+
+        horizontalLayout_2->addWidget(chooseAll_3);
+
+        chooseAll_4 = new QCheckBox(groupBox_4);
+        chooseAll_4->setObjectName(QString::fromUtf8("chooseAll_4"));
+
+        horizontalLayout_2->addWidget(chooseAll_4);
+
+        chooseAll_5 = new QCheckBox(groupBox_4);
+        chooseAll_5->setObjectName(QString::fromUtf8("chooseAll_5"));
+
+        horizontalLayout_2->addWidget(chooseAll_5);
+
+        chooseAll_6 = new QCheckBox(groupBox_4);
+        chooseAll_6->setObjectName(QString::fromUtf8("chooseAll_6"));
+
+        horizontalLayout_2->addWidget(chooseAll_6);
+
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 979, 24));
+        menubar->setGeometry(QRect(0, 0, 1235, 24));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         MainWindow->setStatusBar(statusbar);
+        QWidget::setTabOrder(courseLineEdit, searchButton);
+        QWidget::setTabOrder(searchButton, comboBox);
+        QWidget::setTabOrder(comboBox, checkBox_0);
+        QWidget::setTabOrder(checkBox_0, checkBox_01);
+        QWidget::setTabOrder(checkBox_01, checkBox_02);
+        QWidget::setTabOrder(checkBox_02, checkBox_03);
+        QWidget::setTabOrder(checkBox_03, checkBox_04);
+        QWidget::setTabOrder(checkBox_04, checkBox_2);
+        QWidget::setTabOrder(checkBox_2, checkBox_3);
+        QWidget::setTabOrder(checkBox_3, checkBox_4);
+        QWidget::setTabOrder(checkBox_4, checkBox_5);
+        QWidget::setTabOrder(checkBox_5, tableView);
+        QWidget::setTabOrder(tableView, tt1_0);
+        QWidget::setTabOrder(tt1_0, tt2_0);
+        QWidget::setTabOrder(tt2_0, tt3_0);
+        QWidget::setTabOrder(tt3_0, tt4_0);
+        QWidget::setTabOrder(tt4_0, tt5_0);
+        QWidget::setTabOrder(tt5_0, tt2_1);
+        QWidget::setTabOrder(tt2_1, tt4_1);
+        QWidget::setTabOrder(tt4_1, tt1_1);
+        QWidget::setTabOrder(tt1_1, tt5_1);
+        QWidget::setTabOrder(tt5_1, tt3_1);
+        QWidget::setTabOrder(tt3_1, tt1_2);
+        QWidget::setTabOrder(tt1_2, tt3_2);
+        QWidget::setTabOrder(tt3_2, tt5_2);
+        QWidget::setTabOrder(tt5_2, tt2_2);
+        QWidget::setTabOrder(tt2_2, tt4_2);
+        QWidget::setTabOrder(tt4_2, tt1_3);
+        QWidget::setTabOrder(tt1_3, tt3_3);
+        QWidget::setTabOrder(tt3_3, tt4_3);
+        QWidget::setTabOrder(tt4_3, tt5_3);
+        QWidget::setTabOrder(tt5_3, tt2_3);
+        QWidget::setTabOrder(tt2_3, tt3_4);
+        QWidget::setTabOrder(tt3_4, tt4_4);
+        QWidget::setTabOrder(tt4_4, tt1_4);
+        QWidget::setTabOrder(tt1_4, tt5_4);
+        QWidget::setTabOrder(tt5_4, tt2_4);
+        QWidget::setTabOrder(tt2_4, tt3_5);
+        QWidget::setTabOrder(tt3_5, tt5_5);
+        QWidget::setTabOrder(tt5_5, tt4_5);
+        QWidget::setTabOrder(tt4_5, tt1_5);
+        QWidget::setTabOrder(tt1_5, tt2_5);
+        QWidget::setTabOrder(tt2_5, tt5_6);
+        QWidget::setTabOrder(tt5_6, tt3_6);
+        QWidget::setTabOrder(tt3_6, tt2_6);
+        QWidget::setTabOrder(tt2_6, tt4_6);
+        QWidget::setTabOrder(tt4_6, tt1_6);
+        QWidget::setTabOrder(tt1_6, tt5_7);
+        QWidget::setTabOrder(tt5_7, tt2_7);
+        QWidget::setTabOrder(tt2_7, tt3_7);
+        QWidget::setTabOrder(tt3_7, tt1_7);
+        QWidget::setTabOrder(tt1_7, tt4_7);
+        QWidget::setTabOrder(tt4_7, tt5_8);
+        QWidget::setTabOrder(tt5_8, tt1_8);
+        QWidget::setTabOrder(tt1_8, tt4_8);
+        QWidget::setTabOrder(tt4_8, tt2_8);
+        QWidget::setTabOrder(tt2_8, tt3_8);
+        QWidget::setTabOrder(tt3_8, tt3_9);
+        QWidget::setTabOrder(tt3_9, tt4_9);
+        QWidget::setTabOrder(tt4_9, tt1_9);
+        QWidget::setTabOrder(tt1_9, tt2_9);
+        QWidget::setTabOrder(tt2_9, tt5_9);
+        QWidget::setTabOrder(tt5_9, tt4_10);
+        QWidget::setTabOrder(tt4_10, tt2_10);
+        QWidget::setTabOrder(tt2_10, tt1_10);
+        QWidget::setTabOrder(tt1_10, tt5_10);
+        QWidget::setTabOrder(tt5_10, tt3_10);
+        QWidget::setTabOrder(tt3_10, tt4_11);
+        QWidget::setTabOrder(tt4_11, tt2_11);
+        QWidget::setTabOrder(tt2_11, tt5_11);
+        QWidget::setTabOrder(tt5_11, tt1_11);
+        QWidget::setTabOrder(tt1_11, tt3_11);
+        QWidget::setTabOrder(tt3_11, tt3_12);
+        QWidget::setTabOrder(tt3_12, tt1_12);
+        QWidget::setTabOrder(tt1_12, tt5_12);
+        QWidget::setTabOrder(tt5_12, tt4_12);
+        QWidget::setTabOrder(tt4_12, tt2_12);
+        QWidget::setTabOrder(tt2_12, tt2_13);
+        QWidget::setTabOrder(tt2_13, tt5_13);
+        QWidget::setTabOrder(tt5_13, tt4_13);
+        QWidget::setTabOrder(tt4_13, tt1_13);
+        QWidget::setTabOrder(tt1_13, tt3_13);
+        QWidget::setTabOrder(tt3_13, tt3_14);
+        QWidget::setTabOrder(tt3_14, tt5_14);
+        QWidget::setTabOrder(tt5_14, tt2_14);
+        QWidget::setTabOrder(tt2_14, tt4_14);
+        QWidget::setTabOrder(tt4_14, tt1_14);
+        QWidget::setTabOrder(tt1_14, tt6_5);
+        QWidget::setTabOrder(tt6_5, tt6_6);
+        QWidget::setTabOrder(tt6_6, tt6_4);
+        QWidget::setTabOrder(tt6_4, tt6_0);
+        QWidget::setTabOrder(tt6_0, tt6_13);
+        QWidget::setTabOrder(tt6_13, tt6_14);
+        QWidget::setTabOrder(tt6_14, tt6_3);
+        QWidget::setTabOrder(tt6_3, tt6_8);
+        QWidget::setTabOrder(tt6_8, tt6_7);
+        QWidget::setTabOrder(tt6_7, tt6_1);
+        QWidget::setTabOrder(tt6_1, tt6_12);
+        QWidget::setTabOrder(tt6_12, tt6_11);
+        QWidget::setTabOrder(tt6_11, tt6_10);
+        QWidget::setTabOrder(tt6_10, tt6_2);
+        QWidget::setTabOrder(tt6_2, tt6_9);
+        QWidget::setTabOrder(tt6_9, chooseAll_1);
+        QWidget::setTabOrder(chooseAll_1, chooseAll_2);
+        QWidget::setTabOrder(chooseAll_2, chooseAll_3);
+        QWidget::setTabOrder(chooseAll_3, chooseAll_4);
+        QWidget::setTabOrder(chooseAll_4, chooseAll_5);
+        QWidget::setTabOrder(chooseAll_5, chooseAll_6);
 
         retranslateUi(MainWindow);
 
@@ -596,7 +754,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Course Selection System Beta 01", nullptr));
         groupBox->setTitle(QCoreApplication::translate("MainWindow", "\346\220\234\345\260\213\346\254\204", nullptr));
         comboBox->setItemText(0, QCoreApplication::translate("MainWindow", "\350\252\262\347\250\213\345\220\215\347\250\261", nullptr));
         comboBox->setItemText(1, QCoreApplication::translate("MainWindow", "\346\225\231\345\270\253\345\247\223\345\220\215", nullptr));
@@ -613,7 +771,7 @@ public:
         checkBox_3->setText(QCoreApplication::translate("MainWindow", "\344\270\200\350\210\254\351\201\270\344\277\256", nullptr));
         checkBox_4->setText(QCoreApplication::translate("MainWindow", "\345\205\261\345\220\214", nullptr));
         checkBox_5->setText(QCoreApplication::translate("MainWindow", "\351\200\232\350\255\230", nullptr));
-        groupBox_3->setTitle(QCoreApplication::translate("MainWindow", "Timetable", nullptr));
+        groupBox_3->setTitle(QCoreApplication::translate("MainWindow", "\346\231\202\351\226\223\350\241\250", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "\344\270\200", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "\344\272\214", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "\344\270\211", nullptr));
@@ -725,6 +883,13 @@ public:
         tt6_2->setText(QString());
         tt6_9->setText(QString());
         label_21->setText(QCoreApplication::translate("MainWindow", "\345\205\255", nullptr));
+        groupBox_4->setTitle(QCoreApplication::translate("MainWindow", "\345\205\250\351\201\270\350\250\255\345\256\232", nullptr));
+        chooseAll_1->setText(QCoreApplication::translate("MainWindow", "\344\270\200", nullptr));
+        chooseAll_2->setText(QCoreApplication::translate("MainWindow", "\344\272\214", nullptr));
+        chooseAll_3->setText(QCoreApplication::translate("MainWindow", "\344\270\211", nullptr));
+        chooseAll_4->setText(QCoreApplication::translate("MainWindow", "\345\233\233", nullptr));
+        chooseAll_5->setText(QCoreApplication::translate("MainWindow", "\344\272\224", nullptr));
+        chooseAll_6->setText(QCoreApplication::translate("MainWindow", "\345\205\255", nullptr));
     } // retranslateUi
 
 };

@@ -160,5 +160,8 @@ type =  [input("Category: 0 共同 1 通識 2 系上課"), input("Category2: 0 �
 
 #https://ithelp.ithome.com.tw/articles/10246377
 for row in sheet.iter_rows(min_row=2, max_col=sheet.max_column, max_row=sheet.max_row, values_only=True):
-    cursor.execute(sqlprompt(row, type))
+    try:
+        cursor.execute(sqlprompt(row, type))
+    except:
+        print("Error but continue")
 db.commit()

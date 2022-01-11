@@ -68,8 +68,10 @@ QString sqlQueryMaker(bool* chooseCat, QString searchText, QString searchTextTyp
     if(chooseCat[3])
         query += "((year == '4年級') and (sel_code == '必修' and dptname == '資管系')) or ";
     if(chooseCat[4])
-        query += "((sel_code == '選修') and (dptname == '資管系')) or ";
-    if(chooseCat[5])
+    {
+        query += "(((sel_code == '選修') and (dptname == '資管系')) or cou_cname = '機器學習' or cou_cname = '財務管理' or cou_cname = '線性代數' or cou_cname = '線性代數一' or cou_cname = '計量經濟' or cou_cname = '計量經濟學一' or cou_cname = '高等統計學一' or cou_cname = '高等統計上' or cou_cname = '策略管理' or cou_cname = '深度學習之應用' or cou_cname = '人工智慧' or cou_cname = '商事法' or cou_cname = '供應鏈管理' or cou_cname = '機率' or cou_cname = '機率與統計') or ";
+    }
+   if(chooseCat[5])
         query += "(sel_code == '選修') or ";
     if(chooseCat[6])
     {

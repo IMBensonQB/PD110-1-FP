@@ -103,6 +103,7 @@ void MainWindow::on_searchButton_clicked()
         model->setHeaderData(10, Qt::Horizontal, tr("加選方式"));
         ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
         ui->tableView->setModel(model);
+        ui->tableView->resizeColumnsToContents();
         db.close();
         db.removeDatabase(path);
         uquery.clear();

@@ -72,9 +72,17 @@ QString sqlQueryMaker(bool* chooseCat, QString searchText, QString searchTextTyp
     if(chooseCat[5])
         query += "(sel_code == '選修') or ";
     if(chooseCat[6])
-        query += "(category == 0) or ";
+    {
+        query += "((category == 0) and ";
+        query +=
+        "(cou_cname not like '%微積分%' and cou_cname not like '%化學%' and cou_cname not like '%物理%' and cou_cname not like '%生物%')) or ";
+    }
     if(chooseCat[7])
-        query += "(category == 1 or category2 == 1) or ";
+    {
+        query +=
+        "(category == 1 or category2 == 1) or ";
+
+    }
     query += "cou_cname = '愛情特訓班')";
 
     if (searchTextType == "課程名稱")
